@@ -1,5 +1,5 @@
 Begin
   INPUT DiemToan, DiemLy, DiemHoa
-  X=(DiemToan + DiemLy + DiemHoa)/3
-  Display X
+  DiemTrungBinh=(DiemToan + DiemLy + DiemHoa)/3
+  Display DiemTrungBinh
 End
