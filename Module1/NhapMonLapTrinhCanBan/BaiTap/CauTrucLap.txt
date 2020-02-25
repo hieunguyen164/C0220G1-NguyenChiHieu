@@ -1,0 +1,13 @@
+Begin
+ INPUT n
+ INPUT a1,a2,a3...ai...
+ max = a1, i = 2
+  IF i>n
+    DISPlay max
+  ELSE 
+    IF ai > max
+    max = ai
+    i = i + 1
+    END IF
+  END IF
+END  
