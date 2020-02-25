@@ -1,5 +1,5 @@
 Begin
   INPUT DiemToan, DiemLy, DiemHoa
-  X=(DiemToan + DiemLy + DiemHoa) MOD 3
+  X=(DiemToan + DiemLy + DiemHoa)/3
   Display X
 End
