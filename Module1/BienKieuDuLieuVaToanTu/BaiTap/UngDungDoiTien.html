@@ -24,16 +24,16 @@
         let amount = document.getElementById("amount");
         let fromCurrency = document.getElementById("fromCurrency").value;
         let toCurrency = document.getElementById("toCurrency").value;
-        let result = 0;
+        let result = document.getElementById("result");
         if (fromCurrency == "VND" && toCurrency == "USD"){
-            result = amount.value*23000;
+            result.value= amount.value*23000;
         }
         else if (fromCurrency == "USD" && toCurrency =="VND"){
-            result = amount.value/23000;
+            result.value = amount.value/23000;
         }else {
             alert("Vui long chon loai tien te")
         }
-        document.getElementById("result").value=result;
+
     }
 </script>
 </body>
