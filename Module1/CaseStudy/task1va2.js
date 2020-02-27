@@ -18,9 +18,17 @@ function booking() {
     }else{
         total = 100 * parseInt(rentDays) * (1- parseFloat(discount) / 100)
     }
-    alert('Full Name: ' + fullName + '\n' + 'IdCard: ' + idCard + '\n' + 'Birth Day: ' + bd
-        + '\n' + 'Email: ' + email + '\n' + 'Address: ' + address + '\n' + 'Rank: ' + rank + '\n' + 'Discount: ' + discount + '\n' + 'Guest: ' + guest
-        + '\n' + 'Rent Days: ' + rentDays + '\n' + 'Type of Service: ' + type + '\n' + 'RoomType: ' + roomType + '\n' + 'TOTAL PAYMENT = ' +
-        total)
+    alert('Full Name: ' + fullName +
+        '\n' + 'IdCard: ' + idCard +
+        '\n' + 'Birth Day: ' + bd +
+        '\n' + 'Email: ' + email +
+        '\n' + 'Address: ' + address +
+        '\n' + 'Rank: ' + rank +
+        '\n' + 'Discount: ' + discount +
+        '\n' + 'Guest: ' + guest +
+        '\n' + 'Rent Days: ' + rentDays +
+        '\n' + 'Type of Service: ' + type +
+        '\n' + 'RoomType: ' + roomType +
+        '\n' + 'TOTAL PAYMENT = ' + total)
 }
 
