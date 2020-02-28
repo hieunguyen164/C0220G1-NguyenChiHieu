@@ -2,35 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ung Dung May Tinh</title>
 </head>
 <body>
 <input type="text" id="number1">
 <input type="text" id="number2">
 <br><br>
-<button onclick="addition()">ADDITION (+) </button>
-<button onclick="subtraction()">SUBTRACTION (-)</button>
-<button onclick="multi()">MULTIPLICATION (X)</button>
-<button onclick="division()">DIVISION (/)</button>
+<button value="+" onclick="calculate(this.value)">ADDITION (+) </button>
+<button value="-" onclick="calculate(this.value)">SUBTRACTION (-)</button>
+<button value='x' onclick="calculate(this.value)">MULTIPLICATION (X)</button>
+<button value='/' onclick="calculate(this.value)">DIVISION (/)</button>
 <br><br>
 <input type="text" id="result">
 <script>
-    function addition() {
-        let number1=document.getElementById("number1");
-        let number2=document.getElementById("number2");
+    function calculate(cal) {
+        let number1=parseInt(document.getElementById("number1").value);
+        let number2=parseInt(document.getElementById('number2').value);
         let result=document.getElementById("result");
-        result.value=parseInt(number1.value)+parseInt(number2.value)
-    }
-    function subtraction() {
-        result.value= parseInt(number1.value)-parseInt(number2.value);
-
-    }
-    function multi() {
-        result.value=parseInt(number1.value)*parseInt(number2.value);
-
-    }
-    function division() {
-        result.value=parseInt(number1.value)/parseInt(number2.value);
+        (cal == '+')?
+             result.value=number1+number2:
+            (cal == '-')?
+                result.value=number1-number2:
+                (cal=='x')?
+                    result.value=number1*number2:
+                    (cal=='/')?
+                       result.value=number1/number2:'';
 
     }
 </script>

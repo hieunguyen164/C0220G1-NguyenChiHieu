@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let weight = prompt('Nhap can nang: ');
+let height = prompt('Nhap chieu cao: ');
+let bmi = weight/(height*height);
+let result = (bmi < 18)?
+        'Underweight':
+    (bmi < 25)?
+        'normal':
+    (bmi < 35)?
+        'Overweight':
+        'Obese';
+alert(result);
+
+</script>
+</body>
+</html>
