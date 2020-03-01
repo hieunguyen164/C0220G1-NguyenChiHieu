@@ -10,14 +10,11 @@ function booking() {
     let rentDays = document.getElementById('rentDays').value;
     let type = document.getElementById('type').value;
     let roomType = document.getElementById('roomType').value
-    if (type == "villa") {
-        total = 500 * parseInt(rentDays) * (1 - parseFloat(discount) / 100)
-    }else if (type == "house")
-    {
-        total = 300 * parseInt(rentDays) * (1 - parseFloat(discount) / 100)
-    }else{
-        total = 100 * parseInt(rentDays) * (1- parseFloat(discount) / 100)
-    }
+    let price =(type =='villa')? 500:
+        (type=='house')?300:
+            (type=='room')?100:'';
+    let total = parseInt(price) * parseInt(rentDays) * (1 - parseInt(discount) / 100)
+
     alert('Full Name: ' + fullName +
         '\n' + 'IdCard: ' + idCard +
         '\n' + 'Birth Day: ' + bd +
