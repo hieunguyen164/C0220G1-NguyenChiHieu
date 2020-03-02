@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let tongLuong = parseInt(prompt('Nhap tong tien luong nhan duoc:'));
+   let mienThue = parseInt(prompt('Nhap so tien duoc mien thue: '));
+   let giamTru = parseInt(prompt('Nhap so tien cac khoan giam tru:'));
+   let thuNhapTinhThue = ((tongLuong-mienThue) - giamTru);
+   if(thuNhapTinhThue<=0){
+       alert('NLD co thu nhap chua den muc phai dong thue');
+   }else if(tongLuong<=5000000){
+       var tncn = parseInt(tongLuong*5/100);
+   }else if(tongLuong<=10000000){
+       var tncn = parseInt(tongLuong*10/100-250000);
+   }else if(tongluong<=18000000){
+       var tncn = parseInt(tongLuong*15/100-750000);
+   }else if(tongLuong<=32000000){
+       var tncn = parseInt(tongLuong*20/100-1650000);
+   }else if(tongLuong<=52000000){
+       var tncn = parseInt(tongLuong*25/100-3250000);
+   }else if(tongLuong<=80000000){
+      var tncn = parseInt(tongLuong*30/100-5850000);
+   }else{
+      var tncn = parseInt(tongLuong*35/100-9850000);
+   }
+   alert('Thue thu nhap ca nhan NLD phai nop: ' +tncn +'VND');
+
+
+
+</script>
+</body>
+</html>
