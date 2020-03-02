@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let minute = parseInt(prompt('Nhap so phut goi cua thue bao: '));
+    const fee = 25000;
+    if (minute <= 50 && minute > 0){
+        tong = (600*minute)+fee;
+    }else if(minute<=200){
+        tong = (600*50)+((minute-50)*400)+fee;
+    }else if(minute>200){
+        tong=(600*50)+(400*150)+((minute-200)*200)+fee;
+    }else{
+        alert('Vui long nhap lai');
+    }
+    alert('Cuoc dien thoai cua ban: ' + tong + 'VND');
+</script>
+</body>
+</html>

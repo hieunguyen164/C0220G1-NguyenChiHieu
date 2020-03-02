@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+</head>
+<body>
+<script>
+    let fullName = 'Nguyen Chi Hieu';
+    let idCard = '123456789';
+    let bd = '16/04/1991';
+    let email = 'hieunguyen16491@gmail.com';
+    let address = 'Da Nang';
+    let rank = 'Diamond'
+    let discount = 10;
+    let guest = 1;
+    let rentDays = 2;
+    let type = 'VILLA';
+    let roomType = 'VIP';
+    let total;
+    let menu = parseInt(prompt('1.Hien thi thong tin khach hang.' + '\n' +
+                '2.Chinh sua thong tin khach hang.' + '\n' +
+                '3.Hien Thi Gia Sau Khi Giam.'));
+    switch (menu) {
+        case 1:
+            alert('Ten: ' + fullName + '\n' +
+                'So CMND: ' + idCard + '\n' +
+                'Ngay sinh: ' + bd + '\n' +
+                'Email: ' + email + '\n' +
+                'Dia chi: ' + address + '\n' +
+                'Hang thanh vien: ' + rank + '\n' +
+                'Giam gia: ' + discount + '\n' +
+                'So luong khach: ' + guest + '\n' +
+                'So ngay thue: ' + rentDays + '\n' +
+                'Loai dich vu: ' + type + '\n' +
+                'Loai phong: ' + roomType + '\n');
+            break;
+        case 2:
+            let editMenu = parseInt(prompt('1.Ten: ' + fullName + '\n' +
+                '2.So CMND: ' + idCard + '\n' +
+                '3.Ngay sinh: ' + bd + '\n' +
+                '4.Email: ' + email + '\n' +
+                '5.Dia chi: ' + address + '\n' +
+                '6.Hang thanh vien: ' + rank + '\n' +
+                '7.Giam gia: ' + discount + '\n' +
+                '8.So luong khach: ' + guest + '\n' +
+                '9.So ngay thue: ' + rentDays + '\n' +
+                '10.Loai dich vu: ' + type + '\n' +
+                '11.Loai phong: ' + roomType + '\n'));
+            switch (editMenu) {
+                case 1:
+                    fullName = prompt('Vui long nhap ten:');
+                    break;
+                case 2:
+                    idCard = prompt('Vui long nhap so CMND:');
+                    break;
+                case 3:
+                    bd = prompt('Vui long nhap ngay sinh:');
+                    break;
+                case 4:
+                    email = prompt('Vui long nhap email:');
+                    break;
+                case 5:
+                    address = prompt('Vui long nhap dia chi:');
+                    break;
+                case 6:
+                    rank = prompt('Vui long nhap hang thanh vien:');
+                    break;
+                case 7:
+                    discount = prompt('Vui long nhap so tien duoc giam:');
+                    break;
+                case 8:
+                    guest = prompt('Vui long nhap so nguoi di cung:');
+                    break;
+                case 9:
+                    rentDays = prompt('Vui long nhap so ngay thue:');
+                    break;
+                case 10:
+                    type = prompt('Vui long chon loai dich vu:');
+                    break;
+                case 11:
+                    roomType = prompt('Vui long chon loai phong:');
+                    break;
+                default:
+                    alert('Failed');
+            }
+            alert('Ten: ' + fullName + '\n' +
+                'So CMND: ' + idCard + '\n' +
+                'Ngay sinh: ' + bd + '\n' +
+                'Email: ' + email + '\n' +
+                'Dia chi: ' + address + '\n' +
+                'Hang thanh vien: ' + rank + '\n' +
+                'Giam gia: ' + discount + '\n' +
+                'So luong khach: ' + guest + '\n' +
+                'So ngay thue: ' + rentDays + '\n' +
+                'Loai dich vu: ' + type + '\n' +
+                'Loai phong: ' + roomType + '\n');
+        default:
+            alert('Vui long chon chuc nang co trong menu');
+    }
+
+</script>
+</body>
+</html>
