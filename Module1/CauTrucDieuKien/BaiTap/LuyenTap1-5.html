@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let diemKiemTra = parseInt(prompt('Nhap diem kiem tra:'));
+    let diemGiuaKy = parseInt(prompt('Nhap diem thi giua ky:'));
+    let diemCuoiKy = parseInt(prompt('Nhap diem thi cuoi ky:'));
+    let tong = (diemCuoiKy+diemGiuaKy+diemKiemTra)/3;
+    let result = (tong>=8)?'Loai Gioi':
+        (tong>=6)?'Loai Kha':
+            (tong>4)?'Loai Trung Binh':'Loai Yeu';
+    alert('Xep loai:'  + result);
+</script>
+</body>
+</html>
