@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let temp=parseInt(prompt('Nhap nhiet do hien tai:'+''));
+    let i=100;
+    let j=20;
+    while(true){
+        if(j>temp){
+            temp=parseInt(prompt('Vui long tang nhiet do: '));
+        }else if(i<temp) {
+            temp = parseInt(prompt('Vui long giam nhiet do: '));
+        } else {
+            break;
+        }
+    }
+    alert(temp+' '+'do OK');
+</script>
+</body>
+</html>

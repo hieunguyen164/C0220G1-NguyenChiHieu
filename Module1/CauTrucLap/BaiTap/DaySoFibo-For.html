@@ -6,21 +6,18 @@
 </head>
 <body>
 <script>
-    let count = parseInt(prompt('Nhập tổng chữ số cần hiển thị trong dãy fibonacci:'))
-    let n1=0,n2=1,n;
-    let i=0;
-    while(i<count){
+    let count=parseInt(prompt('Nhập tổng chữ số cần hiển thị trong dãy fibonacci:' ));
+    let n1=0, n2=1, n;
+    for(let i=0; i<count;i++){
         if(i<=1){
-            n=i;
+            n=i
         }else{
             n=n1+n2;
             n1=n2;
             n2=n;
         }
         document.write(n+' ');
-        i++;
     }
-
 </script>
 </body>
 </html>
