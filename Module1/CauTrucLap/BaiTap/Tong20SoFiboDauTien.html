@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count = parseInt(prompt('Nhap so luong so Fibonacci can tinh tong:'));
+    let i = 0;
+    let n1 = 1, n2 = 0, n;
+    let sum = 0;
+    document.write('Tong' + ' ' + count + ' ' + 'so Fibonacci dau tien:' + ' ')
+    while (i < count) {
+        n = n1;
+        n1 = n1 + n2;
+        n2 = n;
+        sum += n2;
+        i++;
+        if (i < count) {
+            document.write(n2 + ' + ')
+        } else {
+            document.write(n2 + ' = ')
+        }
+    }
+    document.write(sum);
+</script>
+</body>
+</html>
