@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count=parseInt(prompt('Nhap so hang: '));
+    for (let i=1;i<=count;i++) {
+        for (let j = 1; j <= count - i; j++) {
+            document.write('&nbsp&nbsp');
+        }
+        for (let k = 1; k <= i; k++) {
+            document.write('*')
+        }
+        document.write('<br>')
+    }
+</script>
+</body>
+</html>
