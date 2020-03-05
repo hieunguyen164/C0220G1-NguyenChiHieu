@@ -10,13 +10,13 @@
     let idCard = '123456789';
     let bd = '16/04/1991';
     let email = 'hieunguyen16491@gmail.com';
-    let address = 'Da Nang';
-    let rank = 'Diamond'
+    let address = 'hue';
+    let rank = 'gold'
     let discount = 10;
     let guest = 1;
-    let rentDays = 2;
-    let type = 'VILLA';
-    let roomType = 'VIP';
+    let rentDays = 7;
+    let type = 'house';
+    let roomType = 'vip';
     let total;
     let menu = parseInt(prompt('1.Hien thi thong tin khach hang.' + '\n' +
                 '2.Chinh sua thong tin khach hang.' + '\n' +
@@ -97,6 +97,62 @@
                 'Loai phong: ' + roomType + '\n');
         default:
             alert('Vui long chon chuc nang co trong menu');
+        case 3:
+
+            switch(type) {
+                case 'villa':
+                    type = 500;
+                    break;
+                case 'house':
+                     type = 300;
+                    break;
+                case 'room':
+                    type = 100;
+                    break;
+            }
+            switch (address) {
+                case 'da nang':
+                    address = 20;
+                    break;
+                case 'hue':
+                    address = 10;
+                    break;
+                case 'quang nam':
+                    address = 5;
+                    break;
+            }
+            switch (rank) {
+                case 'diamond':
+                    rank = 15;
+                    break;
+                case 'platium':
+                     rank = 10;
+                    break;
+                case 'gold':
+                    rank = 5;
+                    break;
+                case 'silver':
+                    rank = 2;
+                    break;
+                default:
+                    rank = 0;
+            }
+            if(rentDays>=7){
+                discount=30;
+            }else if(rentDays>=5){
+                discount=20;
+            }else if(rentDays>=2){
+                discount=10;
+            }else{
+                discount=0;
+            }
+            total=type*rentDays-(address+discount+rank);
+            alert('Muc gia sau khi giam: '+ total+ ' $');
+
+
+
+
+
     }
 
 </script>
