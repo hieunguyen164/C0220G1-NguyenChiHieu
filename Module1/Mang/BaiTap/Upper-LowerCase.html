@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = 'abC'
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    const result = [];
+    for (i=0;i<str.length;i++){
+        if (UPPER.includes(str[i])){
+            result.push(str[i].toLowerCase());
+        }else if(LOWER.includes(str[i])){
+            result.push(str[i].toUpperCase());
+
+        }else{
+            result.push(str[i])
+        }
+    }
+    document.write(result.join());
+</script>
+</body>
+</html>

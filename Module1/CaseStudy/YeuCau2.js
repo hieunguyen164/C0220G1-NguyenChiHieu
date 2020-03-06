@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Task2</title>
-</head>
-<body>
-<script>
-    let fullName = 'Nguyen Chi Hieu';
-    let idCard = '123456789';
-    let bd = '16/04/1991';
-    let email = 'hieunguyen16491@gmail.com';
-    let address = 'hue';
-    let rank = 'gold'
-    let discount = 10;
-    let guest = 1;
-    let rentDays = 7;
-    let type = 'house';
-    let roomType = 'vip';
-    let total;
+
+function booking() {
+    let fullName = document.getElementById('fullName').value;
+    let idCard = document.getElementById('idCard').value;
+    let bd = document.getElementById('bd').value;
+    let email = document.getElementById('email').value;
+    let address = document.getElementById('address').value;
+    let rank = document.getElementById('rank').value;
+    let guest = document.getElementById('guest').value;
+    let rentDays = document.getElementById('rentDays').value;
+    let type = document.getElementById('type').value;
+    let roomType = document.getElementById('roomType').value
+    let discount=0;
     let menu = parseInt(prompt('1.Hien thi thong tin khach hang.' + '\n' +
-                '2.Chinh sua thong tin khach hang.' + '\n' +
-                '3.Hien Thi Gia Sau Khi Giam.'));
+        '2.Chinh sua thong tin khach hang.' + '\n' +
+        '3.Hien Thi Gia Sau Khi Giam.'));
     switch (menu) {
         case 1:
             alert('Ten: ' + fullName + '\n' +
@@ -95,16 +88,17 @@
                 'So ngay thue: ' + rentDays + '\n' +
                 'Loai dich vu: ' + type + '\n' +
                 'Loai phong: ' + roomType + '\n');
+                break;
         default:
             alert('Vui long chon chuc nang co trong menu');
         case 3:
 
-            switch(type) {
+            switch (type) {
                 case 'villa':
                     type = 500;
                     break;
                 case 'house':
-                     type = 300;
+                    type = 300;
                     break;
                 case 'room':
                     type = 100;
@@ -126,7 +120,7 @@
                     rank = 15;
                     break;
                 case 'platium':
-                     rank = 10;
+                    rank = 10;
                     break;
                 case 'gold':
                     rank = 5;
@@ -137,24 +131,22 @@
                 default:
                     rank = 0;
             }
-            if(rentDays>=7){
-                discount=30;
-            }else if(rentDays>=5){
-                discount=20;
-            }else if(rentDays>=2){
-                discount=10;
-            }else{
-                discount=0;
+            if (rentDays >= 7) {
+                discount = 30;
+            } else if (rentDays >= 5) {
+                discount = 20;
+            } else if (rentDays >= 2) {
+                discount = 10;
+            } else {
+                discount = 0;
             }
-            total=type*rentDays-(address+discount+rank);
-            alert('Muc gia sau khi giam: '+ total+ ' $');
-
-
-
-
-
+            total = type * rentDays - (address + discount + rank);
+            alert('Muc gia sau khi giam: ' + total + ' $');
     }
+}
 
-</script>
-</body>
-</html>
+
+
+
+
+

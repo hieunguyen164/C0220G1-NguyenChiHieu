@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+        while (true) {
+            let input = prompt('Nhap tu can tra:');
+            let output ='';
+            let tiengAnh = ['hello', 'morning', 'evening', 'night'];
+            let tiengViet = ['xin chao', 'buoi sang', 'buoi chieu', 'buoi toi'];
+            for (let i = 0; i < tiengAnh.length; i++) {
+                if (input == tiengAnh[i]) {
+                    output = tiengViet[i];
+                    break;
+                }
+            }
+            if(output!=''){
+                alert(input+ ' = '+output);
+            }else{
+                alert("Don't know!");
+            }
+    }
+
+</script>
+</body>
+</html>
