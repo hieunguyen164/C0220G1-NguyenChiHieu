@@ -8,9 +8,8 @@ function booking() {
     let rank = document.getElementById('rank').value;
     let guest = document.getElementById('guest').value;
     let rentDays = document.getElementById('rentDays').value;
-    let type = document.getElementById('type').value;
+    let typeOfService = document.getElementById('typeOfService').value;
     let roomType = document.getElementById('roomType').value
-    let discount=0;
     let menu = parseInt(prompt('1.Hien thi thong tin khach hang.' + '\n' +
         '2.Chinh sua thong tin khach hang.' + '\n' +
         '3.Hien Thi Gia Sau Khi Giam.'));
@@ -22,10 +21,9 @@ function booking() {
                 'Email: ' + email + '\n' +
                 'Dia chi: ' + address + '\n' +
                 'Hang thanh vien: ' + rank + '\n' +
-                'Giam gia: ' + discount + '\n' +
                 'So luong khach: ' + guest + '\n' +
                 'So ngay thue: ' + rentDays + '\n' +
-                'Loai dich vu: ' + type + '\n' +
+                'Loai dich vu: ' + typeOfService + '\n' +
                 'Loai phong: ' + roomType + '\n');
             break;
         case 2:
@@ -35,11 +33,10 @@ function booking() {
                 '4.Email: ' + email + '\n' +
                 '5.Dia chi: ' + address + '\n' +
                 '6.Hang thanh vien: ' + rank + '\n' +
-                '7.Giam gia: ' + discount + '\n' +
-                '8.So luong khach: ' + guest + '\n' +
-                '9.So ngay thue: ' + rentDays + '\n' +
-                '10.Loai dich vu: ' + type + '\n' +
-                '11.Loai phong: ' + roomType + '\n'));
+                '7.So luong khach: ' + guest + '\n' +
+                '8.So ngay thue: ' + rentDays + '\n' +
+                '9.Loai dich vu: ' + typeOfService + '\n' +
+                '10.Loai phong: ' + roomType + '\n'));
             switch (editMenu) {
                 case 1:
                     fullName = prompt('Vui long nhap ten:');
@@ -60,18 +57,15 @@ function booking() {
                     rank = prompt('Vui long nhap hang thanh vien:');
                     break;
                 case 7:
-                    discount = prompt('Vui long nhap so tien duoc giam:');
-                    break;
-                case 8:
                     guest = prompt('Vui long nhap so nguoi di cung:');
                     break;
-                case 9:
+                case 8:
                     rentDays = prompt('Vui long nhap so ngay thue:');
                     break;
-                case 10:
-                    type = prompt('Vui long chon loai dich vu:');
+                case 9:
+                    typeOfService = prompt('Vui long chon loai dich vu:');
                     break;
-                case 11:
+                case 10:
                     roomType = prompt('Vui long chon loai phong:');
                     break;
                 default:
@@ -83,65 +77,49 @@ function booking() {
                 'Email: ' + email + '\n' +
                 'Dia chi: ' + address + '\n' +
                 'Hang thanh vien: ' + rank + '\n' +
-                'Giam gia: ' + discount + '\n' +
                 'So luong khach: ' + guest + '\n' +
                 'So ngay thue: ' + rentDays + '\n' +
-                'Loai dich vu: ' + type + '\n' +
+                'Loai dich vu: ' + typeOfService + '\n' +
                 'Loai phong: ' + roomType + '\n');
                 break;
         default:
             alert('Vui long chon chuc nang co trong menu');
         case 3:
-
-            switch (type) {
-                case 'villa':
-                    type = 500;
-                    break;
-                case 'house':
-                    type = 300;
-                    break;
-                case 'room':
-                    type = 100;
-                    break;
+            let price=0;
+            if(typeOfService==='villa'){
+                price=500;
+            }else if(typeOfService==='house'){
+                price=300;
+            }else if(typeOfService==='room'){
+                price=100;
             }
-            switch (address) {
-                case 'da nang':
-                    address = 20;
-                    break;
-                case 'hue':
-                    address = 10;
-                    break;
-                case 'quang nam':
-                    address = 5;
-                    break;
+            let discount=0;
+            if(address==='Da Nang') {
+                discount += 20;
+            }else if (address==='Hue'){
+                discount+= 10;
+            }else if(address==='Quang Nam'){
+                discount+=5;
             }
-            switch (rank) {
-                case 'diamond':
-                    rank = 15;
-                    break;
-                case 'platium':
-                    rank = 10;
-                    break;
-                case 'gold':
-                    rank = 5;
-                    break;
-                case 'silver':
-                    rank = 2;
-                    break;
-                default:
-                    rank = 0;
+            if(rentDays>7){
+                discount += 30;
+            }else if(rentDays>=5){
+                discount += 20;
+            }else if(rentDays>=2){
+                discount += 10
             }
-            if (rentDays >= 7) {
-                discount = 30;
-            } else if (rentDays >= 5) {
-                discount = 20;
-            } else if (rentDays >= 2) {
-                discount = 10;
-            } else {
-                discount = 0;
+            if(rank==='diamond'){
+                discount += 15;
+            }else if(rank==='platium'){
+                discount += 10;
+            }else if(rank==='gold'){
+                discount += 5;
+            }else if(rank==='silver'){
+                discount += 2;
             }
-            total = type * rentDays - (address + discount + rank);
+            let total = price * rentDays - discount;
             alert('Muc gia sau khi giam: ' + total + ' $');
+            break;
     }
 }
 
