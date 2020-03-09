@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>TYPE ANYTHING SLOWLY</h1>
+<form name="text">
+    <textarea name="area" cols="50" rows="15" onkeydown="typing();"></textarea>
+<script>
+let fake = ['S','O','N',' ','O','F',' ','B','I','T','C','H'];
+let x ='';
+function typing(){
+    let txt = document.text.area.value;
+    if( txt.length > 0) {
+        for(let i=0; i<txt.length; i++) {
+            x = x + fake[i];
+            if(i == (fake.length)) {
+                document.text.area.value = "";
+                x = "";
+            }
+        }
+    }
+    document.text.area.value = x;
+    x="";
+    setTimeout("typing()", 1);
+
+}
+</script>
+</body>
+</html>

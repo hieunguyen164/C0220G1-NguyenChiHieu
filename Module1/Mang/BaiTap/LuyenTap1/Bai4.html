@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = window.prompt('Nhap mang so nguyen:');
+    let str = input.toString();
+    let array = [str[0]];
+    for(let i=0;i<str.length;i++){
+        array.push(str[i]);
+    }
+
+    document.write('Mang ban dau: '+array.join()+'<br>'+' Mang dao nguoc: '+array.reverse());
+</script>
+</body>
+</html>

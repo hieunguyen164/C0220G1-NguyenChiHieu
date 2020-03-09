@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [3,5,7,9,10,11,13,15,17,19];
+    let max = array[0];
+    let index = 0;
+    let tbc = 0;
+    for(let i = 1; i<array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+            index = i;
+        }
+    }
+    for (let j=0;j<array.length;j++){
+        tbc+=array[j]
+    }
+tbc=tbc/array.length;
+document.write('Mang: '+array.join()+'<br>'
+                + 'Gia tri lon nhat: '+max+'<br>'
+                +'Vi tri phan tu lon nhat: '+index+'<br>'
+                + 'Gia tri trung binh: '+tbc);
+</script>
+</body>
+</html>
