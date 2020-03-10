@@ -1,4 +1,3 @@
-
 function booking() {
     let fullName = document.getElementById('fullName').value;
     let idCard = document.getElementById('idCard').value;
@@ -81,40 +80,40 @@ function booking() {
                 'So ngay thue: ' + rentDays + '\n' +
                 'Loai dich vu: ' + typeOfService + '\n' +
                 'Loai phong: ' + roomType + '\n');
-                break;
+            break;
         default:
             alert('Vui long chon chuc nang co trong menu');
         case 3:
-            let price=0;
-            if(typeOfService==='villa'){
-                price=500;
-            }else if(typeOfService==='house'){
-                price=300;
-            }else if(typeOfService==='room'){
-                price=100;
+            let price = 0;
+            if (typeOfService === 'villa') {
+                price = 500;
+            } else if (typeOfService === 'house') {
+                price = 300;
+            } else if (typeOfService === 'room') {
+                price = 100;
             }
-            let discount=0;
-            if(address==='Da Nang') {
+            let discount = 0;
+            if (address === 'Da Nang') {
                 discount += 20;
-            }else if (address==='Hue'){
-                discount+= 10;
-            }else if(address==='Quang Nam'){
-                discount+=5;
+            } else if (address === 'Hue') {
+                discount += 10;
+            } else if (address === 'Quang Nam') {
+                discount += 5;
             }
-            if(rentDays>7){
+            if (rentDays > 7) {
                 discount += 30;
-            }else if(rentDays>=5){
+            } else if (rentDays >= 5) {
                 discount += 20;
-            }else if(rentDays>=2){
+            } else if (rentDays >= 2) {
                 discount += 10
             }
-            if(rank==='diamond'){
+            if (rank === 'diamond') {
                 discount += 15;
-            }else if(rank==='platium'){
+            } else if (rank === 'platium') {
                 discount += 10;
-            }else if(rank==='gold'){
+            } else if (rank === 'gold') {
                 discount += 5;
-            }else if(rank==='silver'){
+            } else if (rank === 'silver') {
                 discount += 2;
             }
             let total = price * rentDays - discount;

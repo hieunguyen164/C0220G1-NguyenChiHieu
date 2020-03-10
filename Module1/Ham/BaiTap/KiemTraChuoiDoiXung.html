@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt('Nhap chuoi can kiem tra: ')
+    isPalindrome(input);
+    function isPalindrome(str) {
+        let first = 0;
+        let last = str.length-1;
+        let status = false;
+        while(first<last){
+            if(str[first]==str[last]){
+                status = true;
+            }
+            first++;
+            last--;
+        }
+        if(status){
+            alert('Chuoi '+"'"+str+"'"+' la chuoi doi xung');
+        }else{
+            alert('Chuoi '+"'" +str+"'" +' khong doi xung' )
+        }
+
+    }
+</script>
+</body>
+</html>
