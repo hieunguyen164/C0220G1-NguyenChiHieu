@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt('Nhap mang so nguyen');
+    let str= input.split(',');
+    let array =[str[0]];
+    for(let i=1;i<str.length;i++){
+        array.push(str[i]);
+    }
+    document.write('Mang so nguyen ban dau: '+ array+'<br>');
+    document.write(('Mang so nguyen dao nguoc: '+ reverse(array)));
+    function reverse(arr) {
+        first = 0;
+        last = arr.length-1;
+        while(first<last){
+            temp = arr[first];
+            arr[first] = arr[last];
+            arr[last] =temp;
+            first++;
+            last--;
+        }
+        return arr;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('Nhap so nguyen thu nhat: ');
+    let b = prompt('Nhap so nguyen thu hai: ');
+    let c = prompt('Nhap so nguyen thu ba: ');
+    alert('So nguyen co gia tri nho nhat la: '+ checkNum(a,b,c));
+    function checkNum(a,b,c) {
+        let min = a;
+        if(min>b){
+            min = b;
+        }
+        if(min>c){
+            min = c;
+        }
+        return min;
+    }
+</script>
+</body>
+</html>

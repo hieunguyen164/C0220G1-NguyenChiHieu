@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let input=prompt('Nhap mang: ');
+let str = input.toString();
+let array = [str[0]];
+for(let i=1;i<str.length;i++){
+    array.push(str[i]);
+    }
+let char=prompt('Nhap ky tu:');
+alert(array);
+if(countChar(char)!=0){
+    alert('Ky tu '+char+' xuat hien '+countChar(char) +' lan trong mang');
+}else{
+    alert('Ky tu '+char+' khong xuat hien trong mang');
+}
+
+function countChar(n) {
+    let count = 0;
+    for (let i=0;i<array.length;i++){
+        if(n==array[i]){
+            count ++;
+        }
+    }
+    if(count==0){
+        count=0;
+    }
+    return count;
+}
+
+</script>
+</body>
+</html>
