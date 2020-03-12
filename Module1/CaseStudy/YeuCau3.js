@@ -163,7 +163,7 @@ function checking() {
         }
         tempAdress+=address.value.charAt(i);
     }
-    address.value = tempAdress
+    address.value = tempAdress;
 
 
 
@@ -187,9 +187,11 @@ function checking() {
 
 
 
+
+
     let check = false;
-    let idCard = document.getElementById('idCard').value;
     while (!check) {
+        let idCard = document.getElementById('idCard').value;
         if (!isNaN(idCard)) {
             idCard = Number.parseFloat(idCard);
         }
@@ -198,78 +200,60 @@ function checking() {
         } else {
             check = true;
         }
-        break;
-    }
 
-
-
-
-    check = false;
-    let bd = document.getElementById('bd').value;
-    while (!check) {
+        check = false;
+        let bd = document.getElementById('bd').value;
         if (bd.charAt(2) === '/' && bd.charAt(5) === '/') {
-            let date = bd.substring(0, 2);
+            let day = bd.substring(0, 2);
             let month = bd.substring(3, 5);
             let year = bd.substring(6, 10);
-            if (!isNaN(date) && !isNaN(month) && !isNaN(year)) {
-                date = Number.parseFloat(date);
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
                 month = Number.parseFloat(month);
                 year = Number.parseFloat(year);
-                if (Number.isInteger(date) && Number.isInteger(month) && Number.isInteger(year)) {
-                    if (date < 32 && month < 13 && year > 1950) {
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day < 32 && month < 13 && year > 1950) {
                         check = true;
+
                     }
                 }
             }
-        } else {
+        }
+        if(!check) {
             alert('Vui long nhap dung dinh dang ngay thang')
         }
-        break;
-    }
 
+        check = false;
+        let rentDays = document.getElementById('rentDays').value;
 
-
-
-
-
-    check = false;
-    let rentDays = document.getElementById('rentDays').value;
-    while (!check) {
         if (!isNaN(rentDays)&& rentDays>0) {
             rentDays = Number.parseFloat(rentDays);
             if (Number.isInteger(rentDays) ) {
                 check = true;
             }
-        } else {
+        } if(!check) {
             alert('Vui long nhap so ngay muon thue');
         }
-        break;
-    }
 
 
 
 
 
 
-    check = false;
-    let guest = document.getElementById('guest').value;
-    while (!check) {
+
+
+        check = false;
+        let guest = document.getElementById('guest').value;
+
         if (!isNaN(guest)&& guest>0) {
             guest = Number.parseFloat(guest);
             if (Number.isInteger(guest) ) {
                 check = true;
             }
-        } else {
+        }if(!check) {
             alert('Vui long nhap so khach di cung');
         }
         break;
     }
 
 }
-
-
-
-
-
-
-

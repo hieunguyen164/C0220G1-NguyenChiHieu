@@ -11,9 +11,11 @@
     document.write('Thu tu ban dau: '+num1 +' '+num2 +'<br>');
     document.write('Thu tu sau khi doi: ' +swap(num1,num2));
     function swap(a,b) {
-        i = b;
-        j = a;
-        return i +' '+ j;
+        temp = a;
+        a=b;
+        b= temp;
+        return [a ,b];
+
 
     }
 </script>
