@@ -25,12 +25,20 @@
 <p id="chuvi"></p>
 <p id="dientich"></p>
 <script>
-    function Rectangle(x,y) {
-        this.x = x;
-        this.y = y;
-        this.P = (x+y)*2;
-        this.S = x*y;
+    class Rectangle {
+        constructor(x, y) {
+            this.width = x;
+            this.height = y;
+            };
+         get chuVi(){
+             return (this.width+this.height)*2;
+         };
+         get dienTich(){
+             return (this.width*this.height);
+         };
+
     }
+
     function crateRectange(){
         let x = parseInt(document.getElementById('width').value);
         let y = parseInt(document.getElementById('height').value);
@@ -38,10 +46,10 @@
         let ctx = document.getElementById('canvas').getContext('2d');
         ctx.beginPath();
         ctx.fillRect(200,200,x,y);
-        ctx.fillStyle = "#FF0000";
+        ctx.fillStyle = "#3c46ff";
         ctx.fill();
-        document.getElementById('chuvi').innerHTML="Chu vi hinh chu nhat la: "+ rectangle.P;
-        document.getElementById('dientich').innerHTML="Dien tich hinh chu nhat la: "+ rectangle.S;
+        document.getElementById('chuvi').innerHTML="Chu vi hinh chu nhat la: "+ rectangle.chuVi;
+        document.getElementById('dientich').innerHTML="Dien tich hinh chu nhat la: "+ rectangle.dienTich;
 
 
     }
