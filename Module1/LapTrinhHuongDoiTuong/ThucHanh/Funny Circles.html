@@ -7,11 +7,13 @@
 <body>
 <canvas id="myCanvas" width="1768px" height="900px" style="border:1px solid #d3d3d3;">
     <script>
-       function Circle(x,y,radius){
-           this.x = x;
-           this.y = y;
-           this.radius = radius
-       }
+        class Circle {
+            constructor(x, y, radius) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius
+            }
+        }
        function randomColor() {
            let red = Math.floor(Math.random()*255);
            let blue = Math.floor(Math.random()*255);

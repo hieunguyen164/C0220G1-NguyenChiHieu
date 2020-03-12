@@ -11,7 +11,8 @@ function booking() {
     let roomType = document.getElementById('roomType').value
     let menu = parseInt(prompt('1.Hien thi thong tin khach hang.' + '\n' +
         '2.Chinh sua thong tin khach hang.' + '\n' +
-        '3.Hien Thi Gia Sau Khi Giam.'));
+        '3.Hien Thi Gia Sau Khi Giam.' + '\n' +
+        '4.Them/Xoa khach hang.'));
     switch (menu) {
         case 1:
             alert('Ten: ' + fullName + '\n' +
@@ -127,6 +128,54 @@ function booking() {
             }
             let total = price * rentDays - discount;
             alert('Muc gia sau khi giam: ' + total + ' $');
+            break;
+
+        case 4:
+            let arrCustomerName = [];
+            while (true) {
+                let choose = parseInt(prompt('1.Add new customer' + '\n' + '2.Delete Customer'));
+                switch (choose) {
+                    case 1:
+                        let number = parseInt(prompt('Please enter the number of customer: '));
+                        for (let i = 0; i < number; i++) {
+                            let customerName = prompt('Please enter name:');
+                            arrCustomerName.push(customerName);
+                        }
+                        let result='';
+                        arrCustomerName.sort();
+                        for(let i=0;i<arrCustomerName.length;i++){
+                            result += ((i+1)+'. '+arrCustomerName[i]+'\n');
+                        }
+                        alert(result);
+                        break;
+
+                    case 2:
+                        let check =false;
+                        let customerName = prompt('Please enter name: ');
+                        for(let i=0;i<arrCustomerName.length;i++) {
+                            if (customerName === arrCustomerName[i]) {
+                                arrCustomerName.splice(i, 1);
+                                check = true;
+                            }
+                        }
+                        if(!check){
+                            alert('Not found');
+                            break;
+                        }
+                        let result1 ='';
+                        arrCustomerName.sort();
+                        for(let i=0;i<arrCustomerName.length;i++){
+                            result1 += ((i+1)+'. '+arrCustomerName[i]+'\n');
+                        }
+                        alert('Deleted Successful');
+                        alert(result1);
+                        break;
+                    default:
+                        alert('Failed');
+
+                }
+
+            }
             break;
     }
 }
