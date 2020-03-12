@@ -7,17 +7,30 @@
 <body>
 
 <script>
-    function Temperature(c) {
-        this.c = c;
-        this.f = c*1.8+32;
-        this.k = c+273.15
-    }
-    let calTemp = new Temperature(25);
-    let f = calTemp.f;
-    let k = calTemp.k;
-    alert('Do F = '+f);
-    alert('Do K = '+k);
-
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+        get toFahrenheit(){
+            return this.celsius*1.8+32;
+        };
+        get toKevin(){
+            return this.celsius +273.15;
+        };
+        }
+        let temp;
+        status = true;
+        do{
+            temp = prompt('Nhap do C: ');
+            if(temp<-273){
+                alert('Failed');
+            }else{
+                status=false;
+            }
+        }while(!status);
+        let temperature = new Temperature(temp);
+        alert(temperature.celsius+' Celsius'+ ' = '+temperature.toFahrenheit+ ' Fahrenheit');
+        alert(temperature.celsius+ ' Celsius'+' = '+temperature.toKevin+' Kevin');
 
 
 </script>
