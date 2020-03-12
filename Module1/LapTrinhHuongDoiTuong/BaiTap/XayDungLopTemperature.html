@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function Temperature(c) {
+        this.c = c;
+        this.f = c*1.8+32;
+        this.k = c+273.15
+    }
+    let calTemp = new Temperature(25);
+    let f = calTemp.f;
+    let k = calTemp.k;
+    alert('Do F = '+f);
+    alert('Do K = '+k);
+
+
+
+</script>
+</body>
+</html>

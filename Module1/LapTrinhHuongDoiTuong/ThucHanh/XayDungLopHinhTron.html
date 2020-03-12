@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function Circle(radius) {
+        this.radius=radius;
+        this.getRadius = function () {
+            return this.radius;
+        };
+        this.getArea = function () {
+            return Math.PI*radius*radius;
+        }
+    }
+    let circle1 = new Circle(2);
+    let radius = circle1.getRadius();
+    let area = circle1.getArea();
+    alert ('Ban kinh: '+radius+'  '+'Dien tich: '+area);
+</script>
+</body>
+</html>

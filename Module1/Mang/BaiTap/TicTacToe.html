@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<p id="caro"></p>
+<script>
+    let caro = document.getElementById("caro");
+    let array = [];
+    let data = "";
+    let player = true;
+    for (i = 0; i < 5; i++) {
+        array[i] = new Array("", "", "", "", "");
+    }
+    function displayCaro() {
+        data = "<table border=1>"
+        for (let i = 0; i < 5; i++) {
+            data += "<tr>";
+            for (let j = 0; j < 5; j++) {
+                data += "<td align='center' style='width:30px;height:30px ' onclick='changeValue(" + i + "," + j + ");'>" + array[i][j] + "</td>";
+            }
+            data += "</tr>"
+        }
+        caro.innerHTML = data;
+    }
+    function checkInput(x,y) {
+        if(array[x][y]==="O"||array[x][y]==="X") {
+            alert("Chon o khac");
+            return false;
+        }
+        return true;
+    }
+
+    function changeValue(x, y) {
+        if (player && checkInput(x,y)) {
+            array[x][y] = "X";
+            player = false;
+            if(checkWin1()) {
+                alert("Player 1 win")
+            }
+
+        } else if(!player && checkInput(x,y)){
+            array[x][y] = "O";
+            player = true;
+            if(checkWin2()) {
+                alert("Player 2 win")
+            }
+
+        }
+        displayCaro();
+    }
+
+    function checkWin1() {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if(array[i][j]==="X") {
+                    if(array[i][j+1]==="X"&&array[i][j+2]==="X") {
+                        return true
+                    }
+                    if(array[i+1][j]==="X"&&array[i+2][j]==="X") {
+                        return true;
+                    }
+                    if(array[i+1][j+1]==="X"&&array[i+2][j+2]==="X") {
+                        return true;
+                    }
+                    if (array[i+1][j-1]==="X"&&array[i+2][j-2]==="X"){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    function checkWin2() {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if(array[i][j]==="O") {
+                    if(array[i][j+1]==="O"&&array[i][j+2]==="O") {
+                        return true
+                    }
+                    if(array[i+1][j]==="O"&&array[i+2][j]==="O") {
+                        return true;
+                    }
+                    if(array[i+1][j+1]==="O"&&array[i+2][j+2]==="O") {
+                        return true;
+                    }
+                    if (array[i+1][j-1]==="O"&&array[i+2][j-2]==="O"){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    displayCaro();
+</script>
+</body>
+
+</html>
