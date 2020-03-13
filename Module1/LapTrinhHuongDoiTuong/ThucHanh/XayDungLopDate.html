@@ -5,50 +5,53 @@
     <title>Title</title>
 </head>
 <body>
-<p id="demo"></p>
+
 <script>
-    function myDate (day,month,year) {
-        this.day = day;
-        this.month= month;
-        this.year = year;
-        this.getDay = function(){
-            return this.day;
-        };
-        this.getMonth = function () {
-            return this.month;
-
-        };
-        this.getYear = function () {
-            return this.year;
-
-        };
-        this.setDay = function (day) {
+    class MyDate {
+        constructor(day, month, year) {
             this.day = day;
-            return this.day;
-
-        };
-        this.setMonth = function (month) {
             this.month = month;
-            return this.month;
-        };
-        this.setYear = function (year) {
             this.year = year;
+        }
+
+        getDay() {
+            return this.day;
+        }
+
+        getMonth() {
+            return this.month;
+        }
+
+        getYear() {
             return this.year;
-        };
+        }
 
+        setDay(day) {
+            this.day = day;
+        }
+
+        setMonth(month) {
+            this.month = month;
+        }
+
+        setYear(year) {
+            this.year = year;
+        }
+
+        setDate(day, month, year) {
+            this.setDay(day);
+            this.setMonth(month);
+            this.setYear(year);
+        }
+
+        toString() {
+            return 'Hom nay la ngay ' + this.getDay() + ' thang ' + this.getMonth() + ' nam ' + this.getYear();
+        }
     }
-    let date = new myDate (2,2,2007);
-    let day = date.getDay();
-    let month = date.getMonth();
-    let year = date.getYear();
-    alert(day + ' / '+month+ ' / ' +year+ '.');
-    day=date.setDay(12);
-    month= date.setMonth(3);
-    year=date.setYear(2020);
-    alert(day + ' / '+month+ ' / ' +year+ '.');
-
-
-
+    let dateNow = new MyDate(22,12,2019);
+    alert(dateNow.toString());
+    dateNow.setDate(13,3,2020);
+    alert(dateNow.toString());
 </script>
 </body>
 </html>

@@ -6,20 +6,26 @@
 </head>
 <body>
 <script>
-
-    function Circle(radius) {
-        this.radius=radius;
-        this.getRadius = function () {
-            return this.radius;
-        };
-        this.getArea = function () {
-            return Math.PI*radius*radius;
-        }
+class Circle{
+    constructor(radius,color) {
+        this.radius = radius;
+        this.color = color;
     }
-    let circle1 = new Circle(2);
-    let radius = circle1.getRadius();
-    let area = circle1.getArea();
-    alert ('Ban kinh: '+radius+'  '+'Dien tich: '+area);
+    getRadius(){
+        return this.radius
+    }
+    getArea(){
+        return this.radius * this.radius*Math.PI
+    }
+    getResult(){
+        return 'Ban kinh hinh tron: '+this.getRadius()+'\n'+'Dien tich hinh tron: '+this.getArea();
+    }
+
+}
+let circle = new Circle(2,);
+alert(circle.getResult());
+
+
 </script>
 </body>
 </html>
