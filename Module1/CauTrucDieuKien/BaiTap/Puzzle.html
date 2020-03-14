@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div style="max-width: 940px">
+<div id="myDiv" style="max-width: 800px;">
     <img id="img1" src="images\a1.jpg" onclick="change('img1')"/>
     <img id="img2" src="images\b2.jpg" onclick="change('img2')"/>
     <img id="img3" src="images\a3.jpg" onclick="change('img3')"/>
@@ -85,8 +85,10 @@
             i5='a5';
         }
     }
-        if(i1.substr(0,1)==i2.substr(0,1)==i3.substr(0,1)==i4.substr(0,1)==i5.substr(0,1)){
-            alert('Done');
+        if(i1.substr(0,1)===i2.substr(0,1 ) && i1.substr(0,1)===i3.substr(0,1) && i1.substr(0,1)===i4.substr(0,1) && i1.substr(0,1)===i5.substr(0,1)){
+            document.getElementById('myDiv').style.border = "thick solid #0000FF";
+        }else{
+            document.getElementById('myDiv').style.border = "";
         }
     }
 </script>
