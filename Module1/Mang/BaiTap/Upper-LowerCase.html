@@ -10,7 +10,7 @@
     const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const LOWER = 'abcdefghijklmnopqrstuvwxyz';
     const result = [];
-    for (i=0;i<str.length;i++){
+    for (let i=0;i<str.length;i++){
         if (UPPER.includes(str[i])){
             result.push(str[i].toLowerCase());
         }else if(LOWER.includes(str[i])){

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+    let str = prompt('Nhap chuoi bat ky:');
+    let arr = Array();
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    for(let i=0;i<str.length;i++) {
+        if (UPPER.includes(str[i])) {
+            arr.push(str[i].toLowerCase());
+        } else if (LOWER.includes(str[i])) {
+            arr.push(str[i].toUpperCase());
+        } else {
+            arr.push(str[i]);
+        }
+    }
+    document.write('Chuoi vua in hoa vua in thuong: '+arr+'<br>');
+    document.write('Chuoi dao nguoc: '+arr.reverse()+'<br>');
+    document.write('In hoa: '+str.toUpperCase()+'<br>');
+    document.write('In thuong: '+str.toLowerCase()+'<br>');
+
+
+
+
+</script>
+
+</body>
+</html>
