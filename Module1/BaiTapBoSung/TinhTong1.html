@@ -7,12 +7,12 @@
 <body>
 <script>
     let n = parseInt(prompt('Nhap so n: '));
-    let S = 1;
+    let S = 0;
 
     if (n == 0) {
         alert('Vo nghiem');
     }else{
-     for(let i = 2;i<=n;i++){
+     for(let i = 1;i<=n;i++){
          S +=  1/i;
         }
         alert('S = ' +S);
