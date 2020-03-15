@@ -7,11 +7,11 @@
 <body>
 <script>
     let input = prompt('Nhap mang so nguyen');
-    let str= input.split(',');
-    let array =[str[0]];
-    for(let i=1;i<str.length;i++){
-        array.push(str[i]);
-    }
+    let array = input.split(' ');
+    // let array = [];
+    // for(let i=0;i<str.length;i++){
+    //     array.push(str[i]);
+    // }
     document.write('Mang so nguyen ban dau: '+ array+'<br>');
     document.write(('Mang so nguyen dao nguoc: '+ reverse(array)));
     function reverse(arr) {
@@ -26,7 +26,6 @@
         }
         return arr;
     }
-
 </script>
 </body>
 </html>
