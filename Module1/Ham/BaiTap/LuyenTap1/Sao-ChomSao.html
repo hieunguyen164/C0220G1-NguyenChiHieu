@@ -7,25 +7,27 @@
 <body>
 
 <script>
-    let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
-    let zodiac = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
-    let input =prompt('Nhap ten ngoi sao: ');
-    findZodiac(input);
-    function findZodiac(starname) {
-        let output = '';
-        for(let i=0;i<star.length;i++){
-            if(input == star[i]){
-                output=zodiac[i];
-                break;
+    while(true) {
+        let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let zodiac = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        let input = prompt('Nhap ten ngoi sao: ');
+        findZodiac(input);
+
+        function findZodiac() {
+            let output = '';
+            for (let i = 0; i < star.length; i++) {
+                if (input == star[i]) {
+                    output = zodiac[i];
+                    break;
+                }
+            }
+            if (output != '') {
+                alert(input + ' thuoc chom sao ' + output);
+            } else {
+                alert('Khong tim thay thong tin');
             }
         }
-        if(output!=''){
-            alert(input + ' thuoc chom sao '+ output);
-        }else{
-            alert('Khong tim thay thong tin');
-        }
     }
-
 </script>
 </body>
 </html>
