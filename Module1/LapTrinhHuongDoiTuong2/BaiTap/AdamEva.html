@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple{
+        constructor() {
+            this.weight = 10;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        isEmpty(){
+            if (this.getWeight()===0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        decrease(){
+            if(this.getWeight()>0){
+                this.weight--;
+            }
+        }
+
+    }
+    class Human{
+        constructor(name,gender,weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        isMale(){
+            if(this.gender==='male'){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        setGender(gender){
+            this.gender = gender;
+        }
+        checkApple(apple) {
+            if (apple.getWeight() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        eat(apple){
+            if(this.checkApple(apple)){
+                this.weight++;
+                apple.decrease();
+            }
+        }
+        say(voice){
+            return voice;
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        setWeight(weight){
+            this.weight = weight;
+        }
+    }
+    let apple = new Apple;
+    let Adam = new Human('Adam','gay',100);
+    let Eva = new Human('Eva','female',50);
+    function story() {
+        console.log(Adam.getName() + ' is male? ' + Adam.isMale());
+        console.log(Eva.getName() + ' is male? ' + Eva.isMale());
+        console.log(Adam.getName() + ' : ' + Adam.getWeight() + ' kg');
+        console.log(Eva.getName() + ' : ' + Eva.getWeight() + ' kg');
+        console.log('Apple: ' + apple.getWeight() + ' .Empty: ' + apple.isEmpty());
+        console.log(Adam.getName() + ' : ' + Adam.say('E an tao khong gai?'));
+        console.log(Eva.getName() + ' : ' + Eva.say('OK man!!!'));
+        while (Adam.checkApple(apple)) {
+            Adam.eat(apple);
+            Eva.eat(apple);
+            console.log(Adam.getWeight());
+            console.log(Eva.getWeight());
+            console.log(apple.getWeight());
+            console.log(apple.isEmpty());
+        }
+    }
+    story();
+
+
+</script>
+</body>
+</html>
