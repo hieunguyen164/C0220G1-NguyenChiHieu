@@ -16,11 +16,11 @@
 
         static storageMessage = "";
 
-        getBattery() {
+        get getBattery() {
             return this.battery;
         }
 
-        powerOn() {
+        get powerOn() {
             if (this.battery === 0) {
                 return this.status = false;
             }
@@ -28,46 +28,49 @@
             }
 
 
-        powerOff() {
+        get powerOff() {
             return this.status = false;
         }
 
-        isOn() {
+        get isOn() {
             return this.status == true;
         }
 
-        chargeBattery() {
-            if (this.getBattery() < 100) {
+         get chargeBattery() {
+            if (this.getBattery < 100) {
                 this.battery++
             }
         }
 
-        drainBatterty() {
-            if (this.isOn()) {
+        get drainBattery() {
+            if (this.isOn) {
                 this.battery--;
             }
         }
 
-        sendMessage(text) {
-            if (this.isOn()) {
-                this.drainBatterty();
+        set sendMessage(text) {
+            if (this.isOn) {
+                this.drainBattery;
                 this.send = text;
                 Phone.storageMessage = text;
+            }else{
+                return'Phone is off';
             }
 
         }
 
-        getSend() {
+        get getSend() {
             return this.send;
 
         }
 
-        getInbox() {
-            if (this.isOn()) {
-                this.drainBatterty();
+        get getInbox() {
+            if (this.isOn) {
+                this.drainBattery;
                 return Phone.storageMessage;
+            }else {
+                return 'Phone is off';
             }
-
         }
 
     }
@@ -75,23 +78,23 @@
     function phone() {
         let phone1 = new Phone(90);
         let phone2 = new Phone(0);
-        console.log(phone1.getBattery(), phone2.getBattery());
-        console.log(phone1.isOn(), phone2.isOn());
-        while (phone2.getBattery() < 100) {
-            phone2.chargeBattery();
-            console.log(phone2.getBattery());
+        console.log(phone1.getBattery, phone2.getBattery);
+        console.log(phone1.isOn, phone2.isOn);
+        while (phone2.getBattery < 100) {
+            phone2.chargeBattery;
+            console.log(phone2.getBattery);
         }
-        phone1.powerOn();
-        console.log(phone1.isOn());
-        phone1.powerOff();
-        console.log(phone1.isOn());
-        phone1.powerOn();
-        phone1.sendMessage('hello');
-        console.log(phone1.getSend());
-        console.log(phone1.getBattery());
-        phone2.powerOn();
-        console.log(phone2.getInbox());
-        console.log(phone2.getBattery());
+        phone1.powerOn;
+        console.log(phone1.isOn);
+        phone1.powerOff;
+        console.log(phone1.isOn);
+        phone1.powerOn;
+        phone1.sendMessage ='hello';
+        console.log(phone1.getSend);
+        console.log(phone1.getBattery);
+        phone2.powerOn;
+        console.log(phone2.getInbox);
+        console.log(phone2.getBattery);
     }
 
     phone();

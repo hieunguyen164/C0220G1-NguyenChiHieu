@@ -220,7 +220,7 @@ function checking() {
     let countAt = 0;
     let countDoc = 0;
     let email = document.getElementById('email').value;
-    for (i = 0; i < email.length; i++) {
+    for (let i = 0; i < email.length; i++) {
         if (email.charAt(i) === '@') {
             countAt++;
             for (j = i + 1; j < email.length; j++) {

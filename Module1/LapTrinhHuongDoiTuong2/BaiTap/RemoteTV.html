@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Television {
+        constructor(remoteCode) {
+            this.remoteCode = remoteCode;
+            this.isOn = false;
+            this.volume = 0;
+            this.channel = 0;
+
+
+        }
+
+        checkIsOn() {
+            if (this.isOn) {
+                console.log('TV is turn on');
+
+            } else {
+                console.log('TV is turn off');
+
+            }
+
+        }
+
+        turnOn_Off() {
+            if (this.isOn) {
+                this.isOn = false;
+                console.log('Turn off the TV');
+            } else {
+                this.isOn = true;
+                console.log('Turn on the TV');
+            }
+
+        }
+
+        setChannel(number) {
+            if (this.isOn) {
+                this.channel = number;
+            } else {
+                this.checkIsOn();
+            }
+        }
+
+        getChannel() {
+            return this.channel;
+        }
+
+        setVolume(number) {
+            if (this.isOn) {
+                this.volume = number;
+            }else {
+                this.checkIsOn();
+            }
+    }
+
+
+        getVolume() {
+            return this.volume;
+        }
+    }
+
+    class Remote {
+        constructor(remoteCode) {
+            this.remoteCode = remoteCode;
+        }
+
+        turnOn_Off(tv) {
+            if (tv.remoteCode === this.remoteCode) {
+                tv.turnOn_Off();
+            }
+        }
+
+        changeVolume(tv, number) {
+            if (tv.remoteCode === this.remoteCode) {
+                tv.setVolume(number);
+            }
+        }
+
+        changeChannel(tv, number) {
+            if (tv.remoteCode === this.remoteCode) {
+                tv.setChannel(number);
+            }
+        }
+    }
+
+    let remoteSamSung = new Remote(1);
+    let TVSamSung = new Television(1);
+    TVSamSung.checkIsOn();
+    remoteSamSung.turnOn_Off(TVSamSung);
+    TVSamSung.checkIsOn();
+    remoteSamSung.changeVolume(TVSamSung, 50);
+    console.log('Change volume to: ' + TVSamSung.getVolume());
+    remoteSamSung.changeChannel(TVSamSung, 43);
+    console.log('Change channel to: ' + TVSamSung.getChannel());
+    remoteSamSung.turnOn_Off(TVSamSung);
+    remoteSamSung.changeVolume(TVSamSung, 100);
+
+
+</script>
+</body>
+</html>

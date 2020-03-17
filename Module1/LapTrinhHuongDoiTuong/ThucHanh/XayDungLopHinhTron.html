@@ -11,19 +11,19 @@ class Circle{
         this.radius = radius;
         this.color = color;
     }
-    getRadius(){
+    get getRadius(){
         return this.radius
     }
-    getArea(){
+    get getArea(){
         return this.radius * this.radius*Math.PI
     }
-    getResult(){
-        return 'Ban kinh hinh tron: '+this.getRadius()+'\n'+'Dien tich hinh tron: '+this.getArea();
+    get getResult(){
+        return 'Ban kinh hinh tron: '+this.getRadius+'\n'+'Dien tich hinh tron: '+this.getArea;
     }
 
 }
-let circle = new Circle(2,);
-alert(circle.getResult());
+let circle = new Circle(2);
+alert(circle.getResult);
 
 
 </script>
