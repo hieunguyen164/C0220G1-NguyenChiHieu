@@ -2,23 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>YeuCau4</title>
+    <title>YeuCau5</title>
     <style>
-        table {
+        .tbl_input{
             border: 1px solid black;
             table-layout: fixed;
             width: 100%;
+            margin-bottom: 50px;
         }
-        th,
-        td {
-            border: 1px solid black;
+
+        .tbl_input td{
+            border:1px solid black;
             overflow: hidden;
+            text-align: center;
+
         }
+
+
+        .tbl_input th{
+            border:1px solid black;
+            text-align: center;
+        }
+        .tbl_guest{
+            border: 1px solid black;
+            table-layout: fixed;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .tbl_guest th {
+            text-align: center;
+        }
+        .tbl_guest td{
+            text-align: center;
+            padding-bottom: 10px;
+            overflow: auto;
+
+        }
+
     </style>
-    <script src="CaseStudy.js"></script>
+    <script src="CaseStudy-Yeucau5.js"></script>
 </head>
 <body>
-<table>
+<table class="tbl_input">
     <tr>
         <h2 align="center">BOOKING</h2>
     </tr>
@@ -35,24 +60,25 @@
         <th>Room Type</th>
         <th><button onclick="checking()">CHECK</button> </th>
 
+
     </tr>
     <tr>
-        <th>
+        <td>
             <input type='text' id="fullName">
-        </th>
-        <th>
+        </td>
+        <td>
             <input type='text' id="idCard">
-        </th>
-        <th>
+        </td>
+        <td>
             <input type='text' id="bd">
-        </th>
-        <th>
+        </td>
+        <td>
             <input type='text' id="email">
-        </th>
-        <th>
+        </td>
+        <td>
             <input type='text' id="address">
-        </th>
-        <th>
+        </td>
+        <td>
             <select id="rank">
                 <option value="diamond">DIAMOND</option>
                 <option value="platium">PLATIUM</option>
@@ -60,33 +86,51 @@
                 <option value="silver">SILVER</option>
                 <option value="member">MEMBER</option>
             </select>
-        </th>
-        <th>
+        </td>
+        <td>
             <input type="text" id="guest">
-        </th>
-        <th>
+        </td>
+        <td>
             <input type="text" id="rentDays">
-        </th>
-        <th>
+        </td>
+        <td>
             <select id="typeOfService">
                 <option value="villa">VILLA</option>
                 <option value="house">HOUSE</option>
                 <option value="room">ROOM</option>
             </select>
-        </th>
-        <th>
+        </td>
+        <td>
             <select id="roomType">
                 <option value="vip">VIP</option>
                 <option value="businees">BUSINESS</option>
                 <option value="normal">NORMAL</option>
             </select>
-        </th>
-        <th>
-            <button onclick="booking()">BOOKING</button>
-        </th>
+        </td>
+        <td>
+            <button onclick="displayMainMenu()">MENU</button>
+        </td>
     </tr>
 
 </table>
+<table  class="tbl_guest">
+    <tr>
+        <h2 align="center">GUEST INFORMATION</h2>
+    </tr>
+    <tr>
+        <th>Full Name</th>
+        <th>ID Card</th>
+        <th>BirthDay</th>
+        <th>Email</th>
+        <th>Adress</th>
+        <th>Rank</th>
+        <th>Guests</th>
+        <th>RentDays</th>
+        <th>Type Of Service</th>
+        <th>Room Type</th>
+    </tr>
+</table>
+<table id="showCustomer" class="tbl_guest"></table>
 
 </body>
 </html>

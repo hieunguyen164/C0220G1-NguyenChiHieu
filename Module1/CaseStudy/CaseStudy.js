@@ -8,7 +8,7 @@ function booking() {
     let guest = document.getElementById('guest').value;
     let rentDays = document.getElementById('rentDays').value;
     let typeOfService = document.getElementById('typeOfService').value;
-    let roomType = document.getElementById('roomType').value
+    let roomType = document.getElementById('roomType').value;
     let menu = parseInt(prompt('1.Hien thi thong tin khach hang.' + '\n' +
         '2.Chinh sua thong tin khach hang.' + '\n' +
         '3.Hien Thi Gia Sau Khi Giam.' + '\n' +
