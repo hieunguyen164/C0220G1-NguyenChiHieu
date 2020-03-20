@@ -30,6 +30,7 @@ function addNewCustomer() {
     let rentDays = document.getElementById('rentDays').value;
     let typeOfService = document.getElementById('typeOfService').value;
     let roomType = document.getElementById('roomType').value;
+
     arrInforCustomer.push(fullName);
     arrInforCustomer.push(idCard);
     arrInforCustomer.push(bd);
@@ -43,12 +44,12 @@ function addNewCustomer() {
     arrListCustomer.push(arrInforCustomer);
     alert('Done');
     arrInforCustomer=[];
-    console.log(arrListCustomer);
-    console.log(arrListCustomer[0][0]);
+
     displayMainMenu();
 }
 function displayInforCustomer() {
 let show ='';
+
     for(let i=0; i< arrListCustomer.length;i++){
         show+='<tr>';
         for(let j = 0;j<arrListCustomer[i].length;j++){
@@ -56,7 +57,6 @@ let show ='';
         }
         show+='</tr>';
     }
-
 document.getElementById('showCustomer').innerHTML=show;
 
 }
