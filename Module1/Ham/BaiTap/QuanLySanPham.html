@@ -12,7 +12,7 @@
             margin-top: 20px;
         }
 
-        .product td, .product th {
+        .product td{
             border: 1px solid #ddd;
             padding: 8px;
         }
@@ -21,33 +21,32 @@
 
         .product tr:hover {background-color: #ddd;}
 
-        .product th{
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #4CAF50;
-            color: white;
-        }
+
+
         .btn{
             text-align: center;
             background-color: #4CAF50;
             color: white;
+            height: 25px;
         }
     </style>
     <script src="QuanLySanPham.js"></script>
 
 </head>
 
-<body>
+<body onload="displayItem()">
 <h2>Add New Product</h2>
-<table class="product" style="width: 330px">
+<table class="product" >
     <tr>
-        <td><input type="text" id='newItem' placeholder="New Product"></td>
+        <td><input style="width: 200px;height: 20px" type="text" id='addItem' placeholder="New Product"></td>
         <td><button class='btn' onclick="addItem()">Add</button></td>
     </tr>
+    <tr>
+        <th align="left"><h3>DISPLAY ALL PRODUCT</h3></th>
+    </tr>
+    <tbody id="displayItem"></tbody>
 </table>
-    <button class="btn" onclick="displayItem()">DISPLAY ALL PRODUCT</button>
-<div id="displayItem"></div>
+
 
 </body>
 </html>
