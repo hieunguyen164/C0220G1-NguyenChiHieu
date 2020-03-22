@@ -22,7 +22,6 @@ let data = '';
 for(let i = 0; i < 5; i++){
     arrXO[i] = new Array('','','','','','');
 }
-
 function displayCaro() {
     data = '<table border="1">';
     for(let i = 0; i < 5; i++){
@@ -32,11 +31,29 @@ function displayCaro() {
         }
         data+='</tr>';
 
+
     }
     data+='</tabel>';
     caro.innerHTML=data
 }
+function changeValue(a,b) {
+    if(player && onTick(a,b)){
+        arrXO[a][b]='X';
+        player = false;
 
+        if(checkWin1()){
+            alert('Player 1 win');
+        }
+    }else if(!player && onTick(a,b)){
+        arrXO[a][b] = 'O';
+        player = true;
+
+        if(checkWin2()){
+            alert('Player 2 win');
+        }
+    }
+    displayCaro();
+}
 function  onTick(a,b) {
     if(arrXO[a][b] === 'X' || arrXO[a][b] === 'O'){
         alert('Please select another cell');
@@ -45,22 +62,7 @@ function  onTick(a,b) {
     return true
 }
 
-function changeValue(a,b) {
-    if(player && onTick(a,b)){
-        arrXO[a][b]='X';
-        player = false;
-        if(checkWin1()){
-            alert('Player 1 win');
-        }
-    }else if(!player && onTick(a,b)){
-        arrXO[a][b] = 'O';
-        player = true;
-        if(checkWin2()){
-            alert('Player 2 win');
-        }
-    }
-displayCaro();
-}
+
 
 
 

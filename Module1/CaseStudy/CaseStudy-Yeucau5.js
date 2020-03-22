@@ -51,8 +51,9 @@ function displayInforCustomer() {
 let show ='';
 
     for(let i=0; i< arrListCustomer.length;i++){
-        show+='<tr>';
-        for(let j = 0;j<arrListCustomer[i].length;j++){
+        let k=i+1;
+        show+='<tr>'+'<td>'+k+'</td>';
+        for(let j = 0;j < arrListCustomer[i].length;j++){
             show += '<td>'+arrListCustomer[i][j]+'</td>';
         }
         show+='</tr>';
