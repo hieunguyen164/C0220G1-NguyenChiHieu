@@ -13,7 +13,16 @@ function displayMainMenu() {
             addNewCustomer();
             break;
         case 2:
-            displayInforCustomer();
+            displayCustomer();
+            break;
+        case 3:
+            editCustomer();
+            break;
+        case 4:
+            deleteCustomer();
+            break;
+        case 5:
+            alert('Exit');
             break;
         default:
             alert('Exit')
@@ -43,27 +52,89 @@ function addNewCustomer() {
     arrInforCustomer.push(roomType);
     arrListCustomer.push(arrInforCustomer);
     alert('Done');
+    console.log(arrListCustomer);
     arrInforCustomer=[];
 
     displayMainMenu();
 }
-function displayInforCustomer() {
-let show ='';
+function displayCustomer() {
+    let show ='';
 
     for(let i=0; i< arrListCustomer.length;i++){
-        let k=i+1;
-        show+='<tr>'+'<td>'+k+'</td>';
+
+        show+='<tr>'+'<td>'+i+'</td>';
         for(let j = 0;j < arrListCustomer[i].length;j++){
             show += '<td>'+arrListCustomer[i][j]+'</td>';
         }
         show+='</tr>';
     }
-document.getElementById('showCustomer').innerHTML=show;
+    document.getElementById('showCustomer').innerHTML=show;
 
 }
 
+function editCustomer() {
+    let title = '';
+    for(let i = 0; i< arrListCustomer.length; i++){
+        title += i  + ' .Name: '+arrListCustomer[i][0] + '\n';
+    }
+    let display = parseInt(prompt(title));
+    let edit = parseInt(prompt('1.Ten: ' + arrListCustomer[display][0] + '\n' +
+        '2.So CMND: ' + arrListCustomer[display][1] + '\n' +
+        '3.Ngay sinh: ' + arrListCustomer[display][2] + '\n' +
+        '4.Email: ' + arrListCustomer[display][3] + '\n' +
+        '5.Dia chi: ' + arrListCustomer[display][4] + '\n' +
+        '6.Hang thanh vien: ' + arrListCustomer[display][5] + '\n' +
+        '7.So luong khach: ' + arrListCustomer[display][6] + '\n' +
+        '8.So ngay thue: ' + arrListCustomer[display][7] + '\n' +
+        '9.Loai dich vu: ' + arrListCustomer[display][8] + '\n' +
+        '10.Loai phong: ' + arrListCustomer[display][9] + '\n'));
+    switch (edit) {
+        case 1:
+            arrListCustomer[display][0] = prompt('Vui long nhap ten:');
+            break;
+        case 2:
+            arrListCustomer[display][1] = prompt('Vui long nhap so CMND:');
+            break;
+        case 3:
+            arrListCustomer[display][2] = prompt('Vui long nhap ngay sinh:');
+            break;
+        case 4:
+            arrListCustomer[display][3] = prompt('Vui long nhap email:');
+            break;
+        case 5:
+            arrListCustomer[display][4] = prompt('Vui long nhap dia chi:');
+            break;
+        case 6:
+            arrListCustomer[display][5] = prompt('Vui long nhap hang thanh vien:');
+            break;
+        case 7:
+            arrListCustomer[display][6] = prompt('Vui long nhap so nguoi di cung:');
+            break;
+        case 8:
+            arrListCustomer[display][7] = prompt('Vui long nhap so ngay thue:');
+            break;
+        case 9:
+            arrListCustomer[display][8] = prompt('Vui long chon loai dich vu:');
+            break;
+        case 10:
+            arrListCustomer[display][9] = prompt('Vui long chon loai phong:');
+            break;
+        default:
+            alert('Exit');
+    }
+    editCustomer();
+}
 
+function deleteCustomer() {
+    let del = parseInt(prompt('Please enter the order number: '));
+    for(let i = 0 ; i< arrListCustomer.length; i++){
+        if(del == i){
+            arrListCustomer.splice(i,1);
+        }
+    }
+    displayCustomer();
 
+}
 
 
 function checking() {
@@ -192,4 +263,3 @@ function checking() {
     }
 
 }
-
