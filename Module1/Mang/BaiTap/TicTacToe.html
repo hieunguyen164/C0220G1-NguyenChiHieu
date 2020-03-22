@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    td{
+        width: 30px;
+        height: 30px;
+        text-align: center;
+    }
+</style>
+<body>
+<div id='caro'></div>
+<script>
+let caro = document.getElementById('caro');
+let arrXO = [];
+let player = true;
+let data = '';
+
+for(let i = 0; i < 5; i++){
+    arrXO[i] = new Array('','','','','','');
+}
+
+function displayCaro() {
+    data = '<table border="1">';
+    for(let i = 0; i < 5; i++){
+        data+='<tr>';
+        for(let j = 0; j < 5; j++){
+            data+='<td onclick="changeValue('+i+','+j+')">' + arrXO[i][j] + '</td>';
+        }
+        data+='</tr>';
+
+    }
+    data+='</tabel>';
+    caro.innerHTML=data
+}
+
+function  onTick(a,b) {
+    if(arrXO[a][b] === 'X' || arrXO[a][b] === 'O'){
+        alert('Please select another cell');
+        return false;
+    }
+    return true
+}
+
+function changeValue(a,b) {
+    if(player && onTick(a,b)){
+        arrXO[a][b]='X';
+        player = false;
+        if(checkWin1()){
+            alert('Player 1 win');
+        }
+    }else if(!player && onTick(a,b)){
+        arrXO[a][b] = 'O';
+        player = true;
+        if(checkWin2()){
+            alert('Player 2 win');
+        }
+    }
+displayCaro();
+}
+
+
+
+function checkWin1() {
+    for(let i = 0; i<arrXO.length ; i++) {
+        for (let j = 0; j < arrXO[i].length; j++) {
+            if (arrXO[i][j] === 'X') {
+                if (arrXO[i + 1][j] === 'X' && arrXO[i + 2][j] === 'X') {
+                    return true;
+                }
+                if (arrXO[i[j + 1]] === 'X' && arrXO[i][j + 2] === 'X') {
+                    return true;
+                }
+                if (arrXO[i + 1][j + 1] === 'X' && arrXO[i + 2][j + 2] === 'X') {
+                    return true;
+                }
+                if (arrXO[i + 1][j - 1] === 'X' && arrXO[i + 2][j - 2] === 'X') {
+                    return true
+                }
+            }
+        }
+    }
+    return false;
+
+}
+
+function checkWin2() {
+    for (let i = 0; i < arrXO.length; i++) {
+        for (let j = 0; j < arrXO[i].length; j++) {
+            if (arrXO[i][j] === 'O') {
+                if (arrXO[i + 1][j] === 'O' && arrXO[i + 2][j] === 'O') {
+                    return true;
+                }
+                if (arrXO[i[j + 1]] === 'O' && arrXO[i][j + 2] === 'O') {
+                    return true;
+                }
+                if (arrXO[i + 1][j + 1] === 'O' && arrXO[i + 2][j + 2] === 'O') {
+                    return true;
+                }
+                if (arrXO[i + 1][j - 1] === 'O' && arrXO[i + 2][j - 2] === 'O') {
+                    return true
+                }
+            }
+        }
+    }
+    return false;
+}
+displayCaro();
+</script>
+</body>
+</html>
