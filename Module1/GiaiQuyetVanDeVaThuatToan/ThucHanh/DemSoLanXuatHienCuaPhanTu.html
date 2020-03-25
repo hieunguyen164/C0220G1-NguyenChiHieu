@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function  count(arr,value) {
+        let count = 0;
+        for( let i = 0; i<arr.length;i++){
+            if(value == arr[i]){
+                count ++
+            }
+        }
+        return count;
+
+    }
+
+    function sort(arr) {
+        arr.sort(function (a,b) {return a-b});
+    }
+
+
+    function dispArr(arr) {
+        for (let i = 0; i< arr.length;i++){
+            document.write(arr[i]+ ' ' );
+            if(i%10==0 && i!=0){
+                document.write('<br>');
+            }
+        }
+   }
+
+
+
+   numRandom = [];
+    for(let i = 0; i < 100; i++){
+        numRandom[i] = Math.floor(Math.random()*101);
+    }
+    sort(numRandom);
+    dispArr(numRandom);
+
+    let num = parseInt(prompt('Nhap so can tim:'));
+    document.write('<br>','<br>');
+    document.write(num + ' xuat hien ' +count(numRandom,num)+ ' lan trong mang.');
+</script>
+</body>
+</html>

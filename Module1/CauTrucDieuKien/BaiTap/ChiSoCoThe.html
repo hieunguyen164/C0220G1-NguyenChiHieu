@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+<tr>
+    <th><p>WEIGHT: </p></th>
+    <th><input type="text" id="weight"></th>
+</tr>
+<tr>
+    <th><p>HEIGHT: </p></th>
+    <th><input type="text" id="height"></th>
+</tr>
+<tr>
+    <th><button onclick="cal();" style="width: 63px">BMI</button> </th>
+    <th><input type="text" id="bmi"> </th>
+</tr>
+<tr>
+    <th><p>Result</p></th>
+    <th><input type="text" id="result"> </th>
+</tr>
+</table>
+<script>
+function cal() {
+    let weight = document.getElementById('weight').value;
+    let height = document.getElementById('height').value;
+    let bmi = document.getElementById('bmi');
+    let result = document.getElementById('result');
+    bmi.value=weight/(height*height);
+    result.value=(bmi.value<18.5)?
+        'Underweight':
+        (bmi.value<25)?
+            'Normal':
+            (bmi.value<30)?
+                'Overweight':'Obese';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YeuCau1</title>
+    <style>
+        table {
+            border: 1px solid black;
+            table-layout: fixed;
+            width: 100%;
+        }
+        th,
+        td {
+            border: 1px solid black;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+<table>
+    <tr>
+        <h2 align="center">BOOKING</h2>
+    </tr>
+    <tr>
+        <th>Full Name</th>
+        <th>ID Card</th>
+        <th>BirthDay</th>
+        <th>Email</th>
+        <th>Adress</th>
+        <th>Rank</th>
+        <th>Discount</th>
+        <th>Guests</th>
+        <th>RentDays</th>
+        <th>Type</th>
+        <th>Room Type</th>
+    </tr>
+    <tr>
+        <th>
+            <input type='text' id="fullName">
+        </th>
+        <th>
+            <input type='text' id="idCard">
+        </th>
+        <th>
+            <input type='date' id="bd">
+        </th>
+        <th>
+            <input type='text' id="email">
+        </th>
+        <th>
+            <input type='text' id="address">
+        </th>
+        <th>
+            <select id="rank">
+                <option value="diamond">DIAMOND</option>
+                <option value="platinium">PLATINIUM</option>
+                <option value="gold">GOLD</option>
+                <option value="silver">SILVER</option>
+                <option value="member">MEMBER</option>
+            </select>
+        </th>
+        <th>
+            <input type="text" id="discount">
+        </th>
+        <th>
+            <input type="number" id="guest">
+        </th>
+        <th>
+            <input type="number" id="rentDays">
+        </th>
+        <th>
+            <select id="type">
+                <option value="villa">VILLA</option>
+                <option value="house">HOUSE</option>
+                <option value="room">ROOM</option>
+            </select>
+        </th>
+        <th>
+            <select id="roomType">
+                <option value="vip">VIP</option>
+                <option value="businees">BUSINESS</option>
+                <option value="normal">NORMAL</option>
+            </select>
+        </th>
+        <th>
+            <button onclick="booking()">BOOKING</button>
+        </th>
+    </tr>
+
+</table>
+<script>
+function booking() {
+let fullName = document.getElementById('fullName').value;
+let idCard = document.getElementById('idCard').value;
+let bd = document.getElementById('bd').value;
+let email = document.getElementById('email').value;
+let address = document.getElementById('address').value;
+let rank = document.getElementById('rank').value;
+let discount = document.getElementById('discount').value;
+let guest = document.getElementById('guest').value;
+let rentDays = document.getElementById('rentDays').value;
+let type = document.getElementById('type').value;
+let roomType = document.getElementById('roomType').value;
+let price =(type =='villa')? 500:
+(type=='house')?300:
+(type=='room')?100:'';
+let total = parseInt(price) * parseInt(rentDays) * (1 - parseInt(discount) / 100);
+
+alert('Full Name: ' + fullName +
+'\n' + 'IdCard: ' + idCard +
+'\n' + 'Birth Day: ' + bd +
+'\n' + 'Email: ' + email +
+'\n' + 'Address: ' + address +
+'\n' + 'Rank: ' + rank +
+'\n' + 'Discount: ' + discount +
+'\n' + 'Guest: ' + guest +
+'\n' + 'Rent Days: ' + rentDays +
+'\n' + 'Type of Service: ' + type +
+'\n' + 'RoomType: ' + roomType +
+'\n' + 'TOTAL PAYMENT = ' + total)
+}
+</script>
+</body>
+</html>

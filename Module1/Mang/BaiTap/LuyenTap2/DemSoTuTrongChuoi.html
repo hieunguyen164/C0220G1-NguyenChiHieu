@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt('Nhap chuoi:');
+    let array = Array();
+    let count = 0;
+    for(let i=0;i<=str.length;i++){
+        array[i]=str.substr(i,1)
+    }
+    for(let j=0;j<array.length;j++){
+        if(isNaN(array[j])){
+            count++
+        }
+    }
+    document.write('Mang: '+array+'<br>');
+    document.write('So tu trong mang la: '+count);
+</script>
+</body>
+</html>

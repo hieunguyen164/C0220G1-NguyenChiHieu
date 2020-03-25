@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YeuCau3</title>
+    <style>
+        table {
+            border: 1px solid black;
+            table-layout: fixed;
+            width: 100%;
+        }
+        th,
+        td {
+            border: 1px solid black;
+            overflow: hidden;
+        }
+    </style>
+    <script src="CaseStudy2-3-4.js"></script>
+</head>
+<body>
+<table>
+    <tr>
+        <h2 align="center">BOOKING</h2>
+    </tr>
+    <tr>
+        <th>Full Name</th>
+        <th>ID Card</th>
+        <th>BirthDay</th>
+        <th>Email</th>
+        <th>Adress</th>
+        <th>Rank</th>
+        <th>Guests</th>
+        <th>RentDays</th>
+        <th>Type Of Service</th>
+        <th>Room Type</th>
+        <th><button onclick="checking()">KIEM TRA</button> </th>
+
+    </tr>
+    <tr>
+        <th>
+            <input type='text' id="fullName">
+        </th>
+        <th>
+            <input type='text' id="idCard">
+        </th>
+        <th>
+            <input type='text' id="bd">
+        </th>
+        <th>
+            <input type='text' id="email">
+        </th>
+        <th>
+            <input type='text' id="address">
+        </th>
+        <th>
+            <select id="rank">
+                <option value="diamond">DIAMOND</option>
+                <option value="platium">PLATIUM</option>
+                <option value="gold">GOLD</option>
+                <option value="silver">SILVER</option>
+                <option value="member">MEMBER</option>
+            </select>
+        </th>
+        <th>
+            <input type="text" id="guest">
+        </th>
+        <th>
+            <input type="text" id="rentDays">
+        </th>
+        <th>
+            <select id="typeOfService">
+                <option value="villa">VILLA</option>
+                <option value="house">HOUSE</option>
+                <option value="room">ROOM</option>
+            </select>
+        </th>
+        <th>
+            <select id="roomType">
+                <option value="vip">VIP</option>
+                <option value="businees">BUSINESS</option>
+                <option value="normal">NORMAL</option>
+            </select>
+        </th>
+        <th>
+            <button onclick="booking()">BOOKING</button>
+        </th>
+    </tr>
+
+</table>
+
+</body>
+</html>

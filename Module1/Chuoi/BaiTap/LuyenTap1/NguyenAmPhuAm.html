@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt('Nhap chuoi');
+    check(str);
+    function check(str) {
+        let count = 0;
+        let count2 = 0;
+        let result='';
+        let result2 = '';
+        let nguyenAm = /[aeiouy]/g;
+        let phuAm = /[^aeiouy]/g;
+        result = str.match(nguyenAm);
+        result2 = str.match(phuAm);
+        count = result.length;
+        count2 = result2.length;
+
+        console.log('So nguyen am: '+count+' ' +result);
+        console.log('So phu am: ' +count2 +' '+result2);
+
+
+    }
+</script>
+</body>
+</html>

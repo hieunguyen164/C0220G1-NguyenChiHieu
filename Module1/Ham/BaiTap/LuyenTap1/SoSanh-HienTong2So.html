@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = parseInt(prompt('Nhap so thu nhat:'));
+    let num2 = parseInt(prompt('Nhap so thu 2: '));
+    alert(display(num1,num2));
+    function display(a,b) {
+        let result ='';
+        if(a>b){
+            result = a +' > '+b;
+        }else if(a<b){
+            result = a+' + '+b +' = '+parseInt(a+b);
+;        }
+        return result;
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let month=parseInt(prompt('Nhap thang:'));
+    let year=parseInt(prompt('Nhap nam:'));
+    let isLeapYear=false;
+    if(year%4==0){
+        if(year%100==0){
+            if(year%400==0){
+                isLeapYear=true;
+            }
+        }else {
+            isLeapYear=true
+        }
+    }
+    switch (month) {
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            document.write('Thang '+month+ ' co 30 ngay');
+            break;
+        case 2:
+            if(isLeapYear) {
+                document.write('Thang 2 co 29 ngay');
+            }else {
+                document.write('Thang 2 co 28 ngay');
+            }
+
+
+            break;
+        default:
+            document.write('Thang '+month+ ' co 31 ngay');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [3,5,7,9,10,11,13,15,17,19];
+    let max = array[0];
+    let index = 0;
+    for (let i=1;i<array.length;i++){
+        if(array[i]>max){
+            max = array[i];
+            index = i;
+        }
+    }
+    document.write('Mang: '+array.join()+'<br>');
+    document.write('Gia tri lon nhat la: '+max+'<br>'+' Vi tri trong mang: '+index);
+</script>
+</body>
+</html>

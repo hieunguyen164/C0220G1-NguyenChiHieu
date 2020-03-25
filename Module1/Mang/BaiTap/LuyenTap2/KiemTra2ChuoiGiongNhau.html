@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1 = prompt('Nhap chuoi thu nhat:');
+    let str2 = prompt('Nhap chuoi thu hai: ');
+    let array1 = Array();
+    let array2 = Array();
+    let status = false;
+    for(let i=0;i<str1.length;i++){
+        array1[i]=str1.substr(i,1);
+    }
+    for(let j=0;j<str2.length;j++){
+        array2[j]=str2.substr(j,1);
+    }
+    if(array1.length===array2.length){
+        for(let i=0;i<array1.length;i++){
+            array1[i]===array2[i];
+            status = true;
+        }
+    }
+    document.write('Chuoi 1: '+array1 + '<br>');
+    document.write('Chuoi 2: '+array2 + '<br>');
+    if(status){
+        document.write('2 chuoi vua nhap giong nhau');
+    }else{
+        document.write('2 chuoi vua nhap khac nhau')
+    }
+</script>
+</body>
+</html>

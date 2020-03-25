@@ -1,0 +1,12 @@
+BEGIN
+    INPUT n
+    max = a1   i = 2
+    WHILE i < n
+      DO  IF ai > max
+        max = ai
+          END IF
+        i = i + 1
+      END DO
+    Display max
+END
+

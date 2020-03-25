@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let className = prompt('Nhập tên lớp:' + '\n' +
+                           '* Bắt đầu bằng một ký tự chữ hoa C hoặc A hoặc P' + '\n'+
+                           '* Không chứa các ký tự đặc biệt.' + '\n' +
+                           '* Theo sau ký tự bắt đầu là 4 ký tự số.'+ '\n' +
+                           '* Kết thúc phải là 1 trong những ký tự chữ hoa sau: G, H, I, K, L, M.' );
+
+    validateClassName(className);
+
+    function validateClassName(str) {
+        let regExp = /^[ACP]{1}\d{4}([GHIKLM]){1}$/;
+        if(regExp.test(str)){
+            alert('Right');
+        }else{
+            alert ('Wrong');
+        }
+
+    }
+
+</script>
+</body>
+</html>

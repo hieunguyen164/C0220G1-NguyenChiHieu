@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May Tinh Don Gian</title>
+    <style>
+        .bt {
+            width:50px;
+            height: 50px;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<table border='0'>
+    <tr>
+        <input type="text" id="display" style="height: 50px; width: 212px">
+    </tr>
+    <tr>
+        <th><button type="button" class="bt" value="1" onclick="calculate(this.value)">1</button></th>
+        <th><button type="button" class="bt" value="2" onclick="calculate(this.value)">2</button></th>
+        <th><button type="button" class="bt" value="3" onclick="calculate(this.value)">3</button></th>
+        <th><button type="button" class="bt" value="+" onclick="calculate(this.value)">+</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" class="bt" value="4" onclick="calculate(this.value)">4</button></th>
+        <th><button type="button" class="bt" value="5" onclick="calculate(this.value)">5</button></th>
+        <th><button type="button" class="bt" value="6" onclick="calculate(this.value)">6</button></th>
+        <th><button type="button" class="bt" value="-" onclick="calculate(this.value)">-</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" class="bt" value="7" onclick="calculate(this.value)">7</button></th>
+        <th><button type="button" class="bt" value="8" onclick="calculate(this.value)">8</button></th>
+        <th><button type="button" class="bt" value="9" onclick="calculate(this.value)">9</button></th>
+        <th><button type="button" class="bt" value="*" onclick="calculate(this.value)">X</button></th>
+    </tr>
+    <tr>
+        <th><button type="button" class="bt" value="c" onclick="calculate(this.value)">C</button></th>
+        <th><button type="button" class="bt" value="0" onclick="calculate(this.value)">0</button></th>
+        <th><button type="button" class="bt" value="/" onclick="calculate(this.value)">/</button></th>
+        <th><button type="button" class="bt" value="=" onclick="calculate(this.value)">=</button></th>
+    </tr>
+<script>
+function calculate(cal) {
+    let display = document.getElementById('display');
+    display.value=(cal == '=')?
+        eval(display.value):(cal == 'c')?
+            '':display.value +cal;
+}
+</script>
+</table>
+</body>
+</html>

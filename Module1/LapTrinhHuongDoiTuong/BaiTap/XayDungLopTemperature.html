@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        };
+        get toFahrenheit(){
+            return this.celsius*1.8+32;
+        };
+        get toKevin(){
+            return this.celsius +273.15;
+        };
+        }
+        while(true) {
+            let temp = parseInt(prompt('Nhap do C: '));
+            if(temp < -273){
+                alert ('Failed')
+            }else {
+                let temperature = new Temperature(temp);
+                alert(temperature.celsius + ' Celsius' + ' = ' + temperature.toFahrenheit + ' Fahrenheit');
+                alert(temperature.celsius + ' Celsius' + ' = ' + temperature.toKevin + ' Kevin');
+            }
+        }
+
+</script>
+</body>
+</html>

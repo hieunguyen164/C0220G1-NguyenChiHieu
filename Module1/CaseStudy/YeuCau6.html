@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CaseStudy Task 6 Final</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 25px;
+            color: white;
+        }
+
+
+        nav {
+            float: left;
+            width: 10%;
+            background: white;
+            padding-left: 20px;
+        }
+        .btnMenu{
+           width: 130px;
+           height: 45px;
+           margin: 10px auto;
+        }
+        article {
+            float: left;
+            padding: 20px;
+            width: 90%;
+            height: auto;
+            background-color: #f1f1f1;
+        }
+
+
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            padding:10px;
+            background-color: #777;
+            text-align: center;
+            color: white;
+
+        }
+
+        @media (max-width: 600px) {
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .tbl_guest{
+            border: 1px solid black;
+            table-layout: fixed;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .tbl_guest th {
+            text-align: center;
+        }
+        .tbl_guest td{
+            text-align: center;
+            padding-bottom: 10px;
+            overflow: auto;
+
+        }
+    </style>
+    <script src="YeuCau6.js"></script>
+</head>
+<body>
+<header>
+    <h2>FURAMA RESORT</h2>
+    <h3>ADMIN MANAGEMENT</h3>
+</header>
+
+<section>
+    <nav>
+
+            <button class="btnMenu" onclick="customerMenu()">Customer Menu</button>
+            <button class="btnMenu" onclick="employeeMenu()">Employee Menu</button>
+
+    </nav>
+
+    <article>
+        <table  class="tbl_guest">
+            <tr>
+                <h2 align="center">GUEST INFORMATION</h2>
+            </tr>
+            <tr>
+                <th>No.</th>
+                <th>Full Name</th>
+                <th>ID Number</th>
+                <th>BirthDay</th>
+                <th>Email</th>
+                <th>Adress</th>
+                <th>Rank</th>
+                <th>Discount</th>
+                <th>Guests</th>
+                <th>RentDays</th>
+                <th>Type Of Service</th>
+                <th>Room Type</th>
+                <th>Payment</th>
+            </tr>
+        </table>
+        <table id="showCustomer" class="tbl_guest">
+
+        </table>
+    </article>
+</section>
+
+<footer>
+   <h6>..........</h6>
+</footer>
+
+</body>
+</html>
