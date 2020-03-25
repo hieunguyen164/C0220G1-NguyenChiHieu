@@ -1,5 +1,0 @@
-Begin
-  INPUT DiemToan, DiemLy, DiemHoa
-  DiemTrungBinh=(DiemToan + DiemLy + DiemHoa)/3
-  Display DiemTrungBinh
-End
