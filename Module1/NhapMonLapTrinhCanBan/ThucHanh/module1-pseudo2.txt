@@ -1,8 +1,0 @@
-Begin
-  N la so duoc sinh ra ngau nhien tu 0 den 9
-  Nhap vao M
-  IF (M==N)
-    Display "Du doan dung"
-  ELSE
-    Display "Du doan sai"
-End

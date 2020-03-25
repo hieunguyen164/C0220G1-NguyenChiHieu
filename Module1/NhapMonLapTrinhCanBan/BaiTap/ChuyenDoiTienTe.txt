@@ -1,6 +1,0 @@
-Begin
-  Input TienDo
-  TienViet = TienDo * 23000
-  Display TienViet
-End
- 
