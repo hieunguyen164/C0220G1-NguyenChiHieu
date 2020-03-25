@@ -15,7 +15,7 @@
             overflow: hidden;
         }
     </style>
-    <script src="task1.js"></script>
+
 </head>
 <body>
 <table>
@@ -101,11 +101,11 @@ let discount = document.getElementById('discount').value;
 let guest = document.getElementById('guest').value;
 let rentDays = document.getElementById('rentDays').value;
 let type = document.getElementById('type').value;
-let roomType = document.getElementById('roomType').value
+let roomType = document.getElementById('roomType').value;
 let price =(type =='villa')? 500:
 (type=='house')?300:
 (type=='room')?100:'';
-let total = parseInt(price) * parseInt(rentDays) * (1 - parseInt(discount) / 100)
+let total = parseInt(price) * parseInt(rentDays) * (1 - parseInt(discount) / 100);
 
 alert('Full Name: ' + fullName +
 '\n' + 'IdCard: ' + idCard +
