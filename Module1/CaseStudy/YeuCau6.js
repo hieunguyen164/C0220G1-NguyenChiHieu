@@ -1,5 +1,7 @@
 let inforCustomer = [];
 let listCustomer = [];
+let inforEmployee = [];
+let listEmployee = [];
 
 class Customer {
     constructor() {
@@ -100,7 +102,7 @@ class Customer {
     setEmail() {
         let email;
         do{
-            email = prompt('Please enter email ( abc@abc.com');
+            email = prompt('Please enter email (abc@abc.com');
             if(validateEmail(email)) {
               return this.email = email;
             }else{
@@ -177,7 +179,7 @@ class Customer {
     };
 
     totalPayment() {
-        let price = '';
+        let price = 0;
         price = (this.getTypeOfServie() === 'Villa') ? 500 : (this.getTypeOfServie() === 'House') ? 300 : (this.getTypeOfServie() === 'Room') ? 100 : '';
         this.payment = (price * this.rentDays * (1 - this.discount / 100));
         if(this.payment<=0){
@@ -198,12 +200,13 @@ class Employee {
         this.level = '';
         this.position = '';
         this.department = '';
-        this.salary = '';
+        this.salary = 0;
+        this.baseSalary = 500;
     };
     getName(){
         return this.name;
     };
-    getBirth(){
+    getBirth() {
         return this.birth;
     }
     getIdNumber(){
@@ -227,31 +230,92 @@ class Employee {
     getSalary(){
         return this.salary;
     };
-    setName(name){
+    setName(){
+        let name = prompt('Please enter name:');
         this.name = name;
     };
-    setBirth(birth){
-        this.birth = birth;
+    setBirth(){
+        let birth;
+        do{
+            birth = prompt('Please enter birthday (DD/MM/YYYY):');
+            if(validateBirthday(birth)){
+                return this.birth = birth;
+            }else{
+                alert('Invalid date format!')
+            }
+        }while (!validateBirthday(birth));
     };
-    setIdNumber(idnumber){
-        this.idNumber = idnumber;
+
+    setIdNumber(){
+        let idnumber;
+        do{
+            idnumber = prompt('Please enter 9 ID Numbers:');
+            if(validateIdNumber(idnumber)){
+                return this.idNumber = idnumber;
+            }else {
+                alert('Invalid id number!');
+            }
+        }while(!validateIdNumber(idnumber));
     };
-    setPhoneNumber(phonenumber){
-        this.phoneNumber = phonenumber;
+    setPhoneNumber(){
+        let phonenumber;
+        do{
+            phonenumber = prompt('Please enter phone number:');
+            if(isNum(phonenumber)){
+                return this.phoneNumber = phonenumber;
+            }else{
+                alert('Invalid phone number!');
+            }
+        }while(!validateIdNumber(phonenumber));
     };
-    setEmail(email){
-        this.email = email;
+    setEmail(){
+        let email;
+        do{
+            email = prompt('Please enter email(abc@abc.com):');
+            if(validateEmail(email)){
+                return this.email = email;
+            }else{
+                alert('Invalid email!')
+            }
+        }while(!validateEmail(email));
     };
-    setLevel(level){
+    setLevel(){
+        let level = prompt('Please enter level'+'\n'+'(Graduate | University | College | Technical)');
         this.level = level;
     };
-    setPosition(position){
-        this.position = position;
+    setPosition(){
+        let position;
+        do{
+            position = prompt('Please enter position:'+'\n'+'(Director | Manager | Supervisor | Specialist | Server | Frontdesk)');
+            if(validatePosition(position)){
+                return this.position = position;
+            }else{
+                alert('Invalid value!')
+            }
+        }while(!validatePosition(position));
     };
-    setDepartment(department){
-        this.department = department
+    setDepartment(){
+       let department;
+       do{
+           department = prompt('Please enter department:'+'\n'+'(Executive | Admin | Server | Sales | Marketing)');
+           if(validateDep(department)){
+               return this.department = department;
+           }else{
+               alert('Invalid value');
+           }
+       }while (!validateDep(department));
     };
+    calSalary(){
+        let tempSalary = 0;
+        if(this.getPosition()==='Manager') {
+            tempSalary += 500;
+        }
+        tempSalary+=(this.getDepartment()==='Sales') ? 300 :(this.getDepartment()==='Marketing') ? 200 : '';
+        this.salary = this.baseSalary + tempSalary;
+        alert('Salary: '+this.getSalary()+ ' $');
+    }
 }
+
 
 function customerMenu() {
     let menu = parseInt(prompt('1. Add new customer'+'\n'
@@ -281,8 +345,8 @@ function customerMenu() {
 function employeeMenu() {
     let menu = parseInt(prompt('1. Add new employee'+'\n'
     +'2. Display employee information'+'\n'
-    +'3. Display employee salary'+'\n'
-    +'4. Exit'));
+    +'3. Exit'
+     ));
     switch (menu) {
         case 1:
             addEmployee();
@@ -291,9 +355,6 @@ function employeeMenu() {
             displayEmployee();
             break;
         case 3:
-            employeeSalary();
-            break;
-        case 4:
             alert('Exit');
             break;
     }
@@ -324,8 +385,8 @@ function addCustomer() {
     inforCustomer.push(newCustomer.getTypeOfServie());
     inforCustomer.push(newCustomer.getRoomType());
     listCustomer.push(inforCustomer);
-    alert('Done');
     inforCustomer = [];
+    alert('Done');
     customerMenu();
 }
 function displayCustomer() {
@@ -379,21 +440,57 @@ function editCustomer() {
     }
 }
 function deleteCustomer() {
-    if(listCustomer.length===0) {
+    if (listCustomer.length === 0) {
         alert('No Data');
-    }else{
-    let sortName = 'Please enter the number to delete:'+'\n';
-    for(let i=0;i<listCustomer.length;i++){
-        sortName += i+ '. Name: '+listCustomer[i][0]+ '\n';
+    } else {
+        let sortName = 'Please enter the number to delete:' + '\n';
+        for (let i = 0; i < listCustomer.length; i++) {
+            sortName += i + '. Name: ' + listCustomer[i][0] + '\n';
+        }
+        let del = parseInt(prompt(sortName));
+        listCustomer.splice(del, 1);
+        alert('Deleted');
+        displayCustomer();
     }
-    let del = parseInt(prompt(sortName));
-    listCustomer.splice(del,1);
-    alert('Deleted');
-    displayCustomer();
-    }
-
-
 }
+    let newEmployee = new Employee();
+    function addEmployee() {
+        newEmployee.setName();
+        newEmployee.setBirth();
+        newEmployee.setIdNumber();
+        newEmployee.setPhoneNumber();
+        newEmployee.setEmail();
+        newEmployee.setLevel();
+        newEmployee.setPosition();
+        newEmployee.setDepartment();
+        inforEmployee.push(newEmployee.getName());
+        inforEmployee.push(newEmployee.getBirth());
+        inforEmployee.push(newEmployee.getIdNumber());
+        inforEmployee.push(newEmployee.getPhoneNumber());
+        inforEmployee.push(newEmployee.getEmail());
+        inforEmployee.push(newEmployee.getLevel());
+        inforEmployee.push(newEmployee.getPosition());
+        inforEmployee.push(newEmployee.getDepartment());
+        listEmployee.push(inforEmployee);
+        inforEmployee = [];
+        alert('Done');
+        employeeMenu();
+    }
+
+    function displayEmployee() {
+        let show ='';
+        for(let i = 0;i<listEmployee.length;i++){
+            show+='<tr>'+'<td>'+i+'</td>';
+            for(let j = 0;j<listEmployee[i].length;j++){
+                show+='<td>'+listEmployee[i][j]+'</td>';
+            }
+            show+='<td>'+'<button onclick="newEmployee.calSalary('+i+')">Salary</button>'+'</td>'+'</tr>'
+        }
+        document.getElementById('showEmployee').innerHTML= show;
+    }
+
+
+
 function validateIdNumber(x) {
     let regExp = /^\d{9}$/;
     return regExp.test(x)
@@ -415,6 +512,17 @@ function isNum(x) {
     let regExp = /^\d+$/;
     return regExp.test(x)
 }
-
+// function validateLevel(x) {
+//     let regExp = /^(Graduate|University|College|Technical)$/;
+//     return regExp.test(x);
+// }
+function validatePosition(x) {
+    let regExp = /^(Director|Manager|Supervisor|Specialist|Server|Frontdesk)$/;
+    return regExp.test(x);
+}
+function validateDep(x) {
+    let regExp = /^(Executive|Admin|Server|Sales|Marketing)$/;
+    return regExp.test(x);
+}
 
 

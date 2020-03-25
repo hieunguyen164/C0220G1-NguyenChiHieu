@@ -63,16 +63,16 @@
                 height: auto;
             }
         }
-        .tbl_guest{
+        .tbl{
             border: 1px solid black;
             table-layout: fixed;
             width: 100%;
             margin-bottom: 10px;
         }
-        .tbl_guest th {
+        .tbl th {
             text-align: center;
         }
-        .tbl_guest td{
+        .tbl td{
             text-align: center;
             padding-bottom: 10px;
             overflow: auto;
@@ -96,7 +96,7 @@
     </nav>
 
     <article>
-        <table  class="tbl_guest">
+        <table  class="tbl">
             <tr>
                 <h2 align="center">GUEST INFORMATION</h2>
             </tr>
@@ -116,7 +116,27 @@
                 <th>Payment</th>
             </tr>
         </table>
-        <table id="showCustomer" class="tbl_guest">
+        <table id="showCustomer" class="tbl">
+
+        </table>
+        <table  class="tbl">
+            <tr>
+                <h2 align="center">EMPLOYEE INFORMATION</h2>
+            </tr>
+            <tr>
+                <th>No.</th>
+                <th>Full Name</th>
+                <th>BirthDay</th>
+                <th>ID Number</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Level</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Salary</th>
+            </tr>
+        </table>
+        <table id="showEmployee" class="tbl">
 
         </table>
     </article>
