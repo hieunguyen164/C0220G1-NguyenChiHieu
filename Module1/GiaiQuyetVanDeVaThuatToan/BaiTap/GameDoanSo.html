@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Number range:</td>
+        <td>
+            <div id="show"></div>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button onclick="linearSearch()">LINEAR SEARCH</button>
+        </td>
+        <td>
+            <button onclick="binarySearch()">BINARY SEARCH</button>
+        </td>
+    </tr>
+    </table>
+
+<script>
+    let numRange = [1, 25, 50, 75, 82, 100];
+    const CORRECT_NUM = 82;
+    document.getElementById('show').innerHTML=numRange.join(' ');
+
+    function linearSearch() {
+        for (let i = 0; i < numRange.length; i++) {
+            if (numRange[i] === CORRECT_NUM) {
+                alert('Correct number is: '+numRange[i]+'\n'+'Time: '+performance.now())
+                }
+            }
+    }
+    
+    function binarySearch() {
+        let min = 0;
+        let max = numRange.length - 1;
+        let mid = 0;
+        while(max>=min){
+            mid = Math.floor(min + (max - min)/ 2);
+            if(numRange[mid]===CORRECT_NUM){
+                    alert('Correct number is: '+numRange[mid]+'\n'+'Time: '+performance.now());
+                    break;
+            }else if(numRange[mid]<CORRECT_NUM){
+                min = mid + 1;
+            }else{
+                max = mid - 1;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
