@@ -85,11 +85,9 @@ function draw() {
         dx = -dx;
     }
 
-    if(y < radiusBall){
+    if(y < radiusBall || x > paddleX && x < paddleX+paddleWidth && y > paddleY-radiusBall ){
         dy = -dy;
-    }else if(x > paddleX && x <paddleX+paddleWidth && y > paddleY-radiusBall && y < paddleY+paddleHeight-radiusBall){
-            dy = -dy;
-        }else if(y+dy>canvas.height) {
+    }else if(y>canvas.height-radiusBall) {
             alert('GAME OVER!!!');
             document.location.reload();
         }
