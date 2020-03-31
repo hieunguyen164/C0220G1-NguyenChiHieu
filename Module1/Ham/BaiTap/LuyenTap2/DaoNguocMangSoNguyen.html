@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,25 +6,23 @@
 </head>
 <body>
 <script>
-    let input = prompt('Nhap mang so nguyen');
-    let array = input.split(' ');
-    // let array = [];
-    // for(let i=0;i<str.length;i++){
-    //     array.push(str[i]);
-    // }
-    document.write('Mang so nguyen ban dau: '+ array+'<br>');
-    document.write(('Mang so nguyen dao nguoc: '+ reverse(array)));
-    function reverse(arr) {
-        first = 0;
-        last = arr.length-1;
-        while(first<last){
-            temp = arr[first];
-            arr[first] = arr[last];
-            arr[last] =temp;
-            first++;
-            last--;
+    msg = 'codegym';
+    for(var x = 0; x < msg.length - 1; x++)
+    {
+        if(msg.length == 3)
+        {
+            for (var i = 2; i < 7; i++)
+            {
+                console.log(i);
+            }
         }
-        return arr;
+        else
+        {
+            for (var i = msg.length; i > (msg.length - 2); i--)
+            {
+                console.log(i);
+            }
+        }
     }
 </script>
 </body>

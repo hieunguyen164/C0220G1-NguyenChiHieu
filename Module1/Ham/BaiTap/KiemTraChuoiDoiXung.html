@@ -6,24 +6,24 @@
 </head>
 <body>
 <script>
-    let input = prompt('Nhap chuoi can kiem tra: ')
+    let input = prompt('Nhap chuoi can kiem tra: ');
     isPalindrome(input);
-    function isPalindrome(str) {
-        let first = 0;
-        let last = str.length-1;
-        let status = false;
-        while(first<last){
-            if(str[first]==str[last]){
+    function isPalindrome(a) {
+        let status;
+        for (let i = 0, j = a.length - 1; i < j; i++, j--) {
+            if (a[i] === a[j]) {
                 status = true;
+            } else {
+                status = false;
             }
-            first++;
-            last--;
         }
         if(status){
-            alert('Chuoi '+"'"+str+"'"+' la chuoi doi xung');
+            alert('Chuoi '+"'"+a+"'"+' la chuoi doi xung');
+
         }else{
-            alert('Chuoi '+"'" +str+"'" +' khong doi xung' )
-        }
+            alert('Chuoi '+"'" +a+"'" +' khong doi xung' )
+    }
+
 
     }
 </script>

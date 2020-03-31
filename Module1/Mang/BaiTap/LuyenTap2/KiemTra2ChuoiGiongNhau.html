@@ -7,28 +7,26 @@
 <body>
 <script>
     let str1 = prompt('Nhap chuoi thu nhat:');
-    let str2 = prompt('Nhap chuoi thu hai: ');
-    let array1 = Array();
-    let array2 = Array();
-    let status = false;
-    for(let i=0;i<str1.length;i++){
-        array1[i]=str1.substr(i,1);
-    }
-    for(let j=0;j<str2.length;j++){
-        array2[j]=str2.substr(j,1);
-    }
-    if(array1.length===array2.length){
-        for(let i=0;i<array1.length;i++){
-            array1[i]===array2[i];
-            status = true;
+    let str2 = prompt('Nhap chuoi thu hai:');
+    let arr1 = str1.split('');
+    let arr2 = str2.split('');
+    compareStr(arr1,arr2);
+    function compareStr(a,b) {
+        let status = false;
+        document.write(str1 + '<br>');
+        document.write(str2 + '<br>');
+        if(a.length===b.length){
+            for(let i = 0; i < a.length; i++){
+                if(a[i]===b[i]){
+                    status = true;
+                }
+            }
         }
-    }
-    document.write('Chuoi 1: '+array1 + '<br>');
-    document.write('Chuoi 2: '+array2 + '<br>');
-    if(status){
-        document.write('2 chuoi vua nhap giong nhau');
-    }else{
-        document.write('2 chuoi vua nhap khac nhau')
+        if(status){
+            document.write('2 chuoi giong nhau');
+        }else{
+            document.write('2 chuoi khac nhau');
+        }
     }
 </script>
 </body>

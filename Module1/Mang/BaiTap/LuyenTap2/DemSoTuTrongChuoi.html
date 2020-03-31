@@ -6,19 +6,20 @@
 </head>
 <body>
 <script>
-    let str = prompt('Nhap chuoi:');
-    let array = Array();
-    let count = 0;
-    for(let i=0;i<=str.length;i++){
-        array[i]=str.substr(i,1)
-    }
-    for(let j=0;j<array.length;j++){
-        if(isNaN(array[j])){
-            count++
+    let str = prompt('Nhap chuoi');
+    let arr = str.split(' ');
+    countChar(arr);
+    function countChar(a) {
+        let count = 0;
+        let show = '';
+        for(let i = 0; i<a.length;i++){
+            if(isNaN(a[i])){
+                count++;
+                show+= a[i]+', '
+            }
         }
+        document.write('So tu trong chuoi la: '+count+'<br>'+show);
     }
-    document.write('Mang: '+array+'<br>');
-    document.write('So tu trong mang la: '+count);
 </script>
 </body>
 </html>
