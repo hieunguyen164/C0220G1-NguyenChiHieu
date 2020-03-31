@@ -12,21 +12,17 @@
             let tiengAnh = ['hello', 'morning', 'evening', 'night'];
             let tiengViet = ['xin chao', 'buoi sang', 'buoi chieu', 'buoi toi'];
             for (let i = 0; i < tiengAnh.length; i++) {
-                if (input == tiengAnh[i]) {
+                if (input === tiengAnh[i]) {
                     output = tiengViet[i];
-                    break;
+                }
+                if(input === tiengViet[i]){
+                    output = tiengAnh[i];
                 }
             }
-            for (let j=0;j<tiengViet.length;j++){
-                if(input == tiengViet[j]){
-                    output = tiengAnh[j];
-                    break;
-                }
-            }
-            if(output!=''){
+            if(output!==''){
                 alert(input+ ' = '+output);
             }else{
-                alert("Don't know!");
+                alert("Not found");
             }
     }
 
