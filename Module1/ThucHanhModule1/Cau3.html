@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let arrScore = [6, 2, 8, 1, 1, 8, 4];
+findMaxScore(arrScore);
+
+function findMaxScore(arr) {
+    document.write('Mang dau vao: '+arr+'<br>');
+    let max = arr[0];
+    let index = 0;
+    for(let i = 1;i<arr.length;i++){
+        if(arr[i]>max){
+            max = arr[i];
+            index = arr.lastIndexOf(max);
+        }
+
+    }
+    document.write('Max Score: '+ max+ ' Index: '+index) ;
+}
+</script>
+</body>
+</html>
