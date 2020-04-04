@@ -1,7 +1,5 @@
-let inforCustomer = [];
-let listCustomer = [];
-let inforEmployee = [];
-let listEmployee = [];
+
+//CREATE CLASS CUSTOMER
 
 class Customer {
     constructor() {
@@ -17,8 +15,7 @@ class Customer {
         this.typeOfService = '';
         this.roomType = '';
         this.payment = 0;
-
-    }
+    };
 
     getName() {
         return this.name;
@@ -38,7 +35,7 @@ class Customer {
 
     getAddress() {
         return this.address;
-    }
+    };
 
     getRank() {
         return this.rank;
@@ -66,7 +63,8 @@ class Customer {
 
     getPayment(){
         return this.payment;
-    }
+    };
+
     setName() {
        let name = prompt('Please enter name:');
        this.name = name;
@@ -82,7 +80,6 @@ class Customer {
                 alert('Invalid Id number!')
             }
         }while(!validateIdNumber(idnumber))
-
     };
 
     setBirth() {
@@ -96,26 +93,24 @@ class Customer {
             }
 
         }while(!validateBirthday(birth));
-
     };
 
     setEmail() {
         let email;
         do{
-            email = prompt('Please enter email (abc@abc.com');
+            email = prompt('Please enter email (abc@abc.com)');
             if(validateEmail(email)) {
               return this.email = email;
             }else{
                 alert('Invalid email!')
             }
         }while(!validateEmail(email));
-
     };
 
     setAddress() {
         let address = prompt('Please enter address:');
         this.address = address;
-    }
+    };
 
     setRank() {
         let rank = prompt('Please enter rank member:'+'\n'+'(Diamond | Platinum | Gold | Silver | Member)');
@@ -132,7 +127,6 @@ class Customer {
                 alert('Invalid value');
             }
         }while(!isNum(discount));
-
     };
 
     setGuest() {
@@ -145,8 +139,6 @@ class Customer {
                 alert('Invalid value!');
             }
         }while (!isNum(guest));
-
-
     };
 
     setRentDays() {
@@ -190,6 +182,9 @@ class Customer {
     };
 }
 
+
+//CREATE CLASS EMPLOYEE
+
 class Employee {
     constructor() {
         this.name = '';
@@ -201,39 +196,49 @@ class Employee {
         this.position = '';
         this.department = '';
         this.salary = 0;
-        this.baseSalary = 500;
     };
+
     getName(){
         return this.name;
     };
+
     getBirth() {
         return this.birth;
-    }
+    };
+
     getIdNumber(){
         return this.idNumber;
     };
+
     getPhoneNumber(){
         return this.phoneNumber;
     };
+
     getEmail(){
         return this.email;
     };
+
     getLevel(){
         return this.level;
     };
+
     getPosition(){
         return this.position;
     };
+
     getDepartment(){
         return this.department;
     };
+
     getSalary(){
         return this.salary;
     };
+
     setName(){
         let name = prompt('Please enter name:');
         this.name = name;
     };
+
     setBirth(){
         let birth;
         do{
@@ -257,6 +262,7 @@ class Employee {
             }
         }while(!validateIdNumber(idnumber));
     };
+
     setPhoneNumber(){
         let phonenumber;
         do{
@@ -268,6 +274,7 @@ class Employee {
             }
         }while(!validateIdNumber(phonenumber));
     };
+
     setEmail(){
         let email;
         do{
@@ -279,10 +286,12 @@ class Employee {
             }
         }while(!validateEmail(email));
     };
+
     setLevel(){
         let level = prompt('Please enter level'+'\n'+'(Graduate | University | College | Technical)');
         this.level = level;
     };
+
     setPosition(){
         let position;
         do{
@@ -294,6 +303,7 @@ class Employee {
             }
         }while(!validatePosition(position));
     };
+
     setDepartment(){
        let department;
        do{
@@ -305,17 +315,21 @@ class Employee {
            }
        }while (!validateDep(department));
     };
+
     calSalary(){
-        let tempSalary = 0;
+        let tempSalary=0;
+        let baseSalary= 500;
         if(this.getPosition()==='Manager') {
             tempSalary += 500;
         }
         tempSalary+=(this.getDepartment()==='Sales') ? 300 :(this.getDepartment()==='Marketing') ? 200 : '';
-        this.salary = this.baseSalary + tempSalary;
+        this.salary = 1*baseSalary + 1*tempSalary;
         alert('Salary: '+this.getSalary()+ ' $');
-    }
+    };
 }
 
+
+// CUSTOMER MENU
 
 function customerMenu() {
     let menu = parseInt(prompt('1. Add new customer'+'\n'
@@ -342,6 +356,9 @@ function customerMenu() {
     }
 }
 
+
+//EMPLOYEE MENU
+
 function employeeMenu() {
     let menu = parseInt(prompt('1. Add new employee'+'\n'
     +'2. Display employee information'+'\n'
@@ -360,6 +377,9 @@ function employeeMenu() {
     }
 }
 
+//CUSTOMER FUNCTION
+let inforCustomer = [];
+let listCustomer = [];
 let newCustomer = new Customer();
 function addCustomer() {
     newCustomer.setName();
@@ -389,6 +409,7 @@ function addCustomer() {
     alert('Done');
     customerMenu();
 }
+
 function displayCustomer() {
     let show ='';
     for(let i = 0;i<listCustomer.length;i++){
@@ -396,7 +417,7 @@ function displayCustomer() {
         for(let j = 0;j<listCustomer[i].length;j++){
             show+='<td>'+listCustomer[i][j]+'</td>';
         }
-        show+='<td>'+'<button onclick="newCustomer.totalPayment('+i+')">Price</button>'+'</td>'+'</tr>'
+        show+='<td>'+'<button onclick="newCustomer.totalPayment()">Price</button>'+'</td>'+'</tr>'
     }
     document.getElementById('showCustomer').innerHTML= show;
 }
@@ -439,6 +460,7 @@ function editCustomer() {
         displayCustomer();
     }
 }
+
 function deleteCustomer() {
     if (listCustomer.length === 0) {
         alert('No Data');
@@ -453,56 +475,67 @@ function deleteCustomer() {
         displayCustomer();
     }
 }
-    let newEmployee = new Employee();
-    function addEmployee() {
-        newEmployee.setName();
-        newEmployee.setBirth();
-        newEmployee.setIdNumber();
-        newEmployee.setPhoneNumber();
-        newEmployee.setEmail();
-        newEmployee.setLevel();
-        newEmployee.setPosition();
-        newEmployee.setDepartment();
-        inforEmployee.push(newEmployee.getName());
-        inforEmployee.push(newEmployee.getBirth());
-        inforEmployee.push(newEmployee.getIdNumber());
-        inforEmployee.push(newEmployee.getPhoneNumber());
-        inforEmployee.push(newEmployee.getEmail());
-        inforEmployee.push(newEmployee.getLevel());
-        inforEmployee.push(newEmployee.getPosition());
-        inforEmployee.push(newEmployee.getDepartment());
-        listEmployee.push(inforEmployee);
-        inforEmployee = [];
-        alert('Done');
-        employeeMenu();
-    }
 
-    function displayEmployee() {
-        let show ='';
-        for(let i = 0;i<listEmployee.length;i++){
-            show+='<tr>'+'<td>'+i+'</td>';
-            for(let j = 0;j<listEmployee[i].length;j++){
-                show+='<td>'+listEmployee[i][j]+'</td>';
-            }
-            show+='<td>'+'<button onclick="newEmployee.calSalary('+i+')">Salary</button>'+'</td>'+'</tr>'
+
+//EMPLOYEE FUNCTION
+let inforEmployee = [];
+let listEmployee = [];
+let newEmployee = new Employee();
+
+function addEmployee() {
+    newEmployee.setName();
+    newEmployee.setBirth();
+    newEmployee.setIdNumber();
+    newEmployee.setPhoneNumber();
+    newEmployee.setEmail();
+    newEmployee.setLevel();
+    newEmployee.setPosition();
+    newEmployee.setDepartment();
+    inforEmployee.push(newEmployee.getName());
+    inforEmployee.push(newEmployee.getBirth());
+    inforEmployee.push(newEmployee.getIdNumber());
+    inforEmployee.push(newEmployee.getPhoneNumber());
+    inforEmployee.push(newEmployee.getEmail());
+    inforEmployee.push(newEmployee.getLevel());
+    inforEmployee.push(newEmployee.getPosition());
+    inforEmployee.push(newEmployee.getDepartment());
+    listEmployee.push(inforEmployee);
+    inforEmployee = [];
+    alert('Done');
+    employeeMenu();
+}
+
+function displayEmployee() {
+    let show = '';
+    for (let i = 0; i < listEmployee.length; i++) {
+        show += '<tr>' + '<td>' + i + '</td>';
+        for (let j = 0; j < listEmployee[i].length; j++) {
+            show += '<td>' + listEmployee[i][j] + '</td>';
         }
-        document.getElementById('showEmployee').innerHTML= show;
+        show += '<td>' + '<button onclick="newEmployee.calSalary()">Salary</button>' + '</td>' + '</tr>'
     }
+    document.getElementById('showEmployee').innerHTML = show;
+}
 
 
+
+//regEXP Validate
 
 function validateIdNumber(x) {
     let regExp = /^\d{9}$/;
     return regExp.test(x)
 }
+
 function validateBirthday(x) {
     let regExp = /^(0[1-9]|1[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[1-2])\/((19|20)\d{2})$/;
     return regExp.test(x);
 }
+
 function validateEmail(x) {
     let regExp = /^[a-zA-Z0-9]+[a-zA-Z0-9]*@[a-zA-Z0-9]+(\.[a-zA-Z]+)$/;
     return regExp.test(x);
 }
+
 function validateTypeOfService(x) {
     let regExp = /^(Villa|House|Room)$/;
     return regExp.test(x);
@@ -512,14 +545,17 @@ function isNum(x) {
     let regExp = /^\d+$/;
     return regExp.test(x)
 }
+
 // function validateLevel(x) {
 //     let regExp = /^(Graduate|University|College|Technical)$/;
 //     return regExp.test(x);
 // }
+
 function validatePosition(x) {
     let regExp = /^(Director|Manager|Supervisor|Specialist|Server|Frontdesk)$/;
     return regExp.test(x);
 }
+
 function validateDep(x) {
     let regExp = /^(Executive|Admin|Server|Sales|Marketing)$/;
     return regExp.test(x);
