@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Student{
+        constructor(noNum,name,birthDay,avgScore) {
+            this.noNum = noNum;
+            this.name = name;
+            this.birthDay = birthDay;
+            this.avgScore = avgScore;
+        };
+        get getNoNum(){
+            return this.noNum;
+        };
+        get getName(){
+            return this.name;
+        };
+        get getBirthDay(){
+            return this.birthDay;
+        };
+        get getAvgScore(){
+            return this.avgScore;
+        };
+    }
+    studentInfo();
+    function studentInfo() {
+        let student1 = new Student(1,'Hieu','11/11/2000',5);
+        let avg = student1.getAvgScore;
+        let grade = (avg>=8)?'Loai gioi':
+                        (avg>=6)?'Loai Kha':
+                            (avg>=5)?'Loai Trung Binh':
+                                (avg>=3.5)?'Loai Yeu':'Loai Kem';
+        document.write('So thu tu: '+ student1.getNoNum + '<br>');
+        document.write('Ho Ten: '+ student1.getName + '<br>');
+        document.write('Ngay Sinh: '+ student1.getBirthDay + '<br>');
+        document.write('Diem Trung Binh: '+ student1.getAvgScore+'<br>');
+        document.write('Xep loai hoc luc: '+grade);
+    }
+</script>
+</body>
+</html>

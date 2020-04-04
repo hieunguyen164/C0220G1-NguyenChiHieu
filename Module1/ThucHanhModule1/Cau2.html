@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = parseInt(prompt('Nhap so can kiem tra:'));
+    let result = isMainNumber(num);
+    alert(result);
+    function isMainNumber(num) {
+        if (Math.sqrt(num) % 1 === 0){
+          return true;
+        }else{
+            return false;
+        }
+
+    }
+</script>
+</body>
+</html>
